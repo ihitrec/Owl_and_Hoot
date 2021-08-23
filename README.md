@@ -5,7 +5,14 @@ The fourth and final project in Code Institute Full Stack Developer program feat
 ## UX
 
 ### User Stories
-### Potential Features
+
+- I want to be able to create an account.
+- I want the option to delete my profile.
+- I want to see the reviews and the posibility to leave one.
+- I would like to search for products and filter the brands I desire.
+- I want to be able to add a product to basket and view it before going to checkout.
+- I wish the products had good images from different angles to get a better look of the product.
+
 ### Wireframes
 ### Colors
 ### Fonts
