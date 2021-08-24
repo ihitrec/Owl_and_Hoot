@@ -30,9 +30,10 @@
         <nav>
             <ul class="nav-items">
                 <li class="logo">
-                    <a href="#">Logo</a>
+                    <a aria-label="go to homepage" href="#"><img src="{% static 'images/logo.png' %}" alt="Logo"></a>
                 </li>
-                <li>
+                <li class="search">
+                    <img src="{% static 'images/search.png' %}" alt="Search icon">
                     <input type="search" aria-label="find products" name="search" id="search">
                 </li>
                 <div class="main-links">
@@ -46,11 +47,13 @@
                         <a href="#">Women</a>
                     </li>
                 </div>
-                <li>
+                <li class="login">
+                    <img src="{% static 'images/user.png' %}" alt="Profile icon">
                     <a href="#">Sign in</a>
                 </li>
-                <li>
-                    <a href="#">Basket</a>
+                <li class="cart" tabindex="0" aria-label="open cart">
+                    <img src="{% static 'images/cart.png' %}" alt="Cart icon">
+                    <span>0</span>
                 </li>
             </ul>
         </nav>
