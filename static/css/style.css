@@ -79,4 +79,81 @@ nav input {
     border-width: 0 0px 1px;
 }
 
+nav .menu-btn {
+    display: none;
+}
+
 /* Navigation ------------------------------------------------------------------- END */
+
+/* START ---------------------------------------------------------------- Media query */
+
+@media only screen and (max-width: 1000px) {
+    .nav-items {
+        display: flex;
+        padding: 0;
+    }
+
+    nav .logo {
+        order: 2;
+        text-align: center;
+        width: 33%;
+    }
+
+    nav .search {
+        order: 1;
+        text-align: center;
+        width: 33%;
+    }
+
+    .search input,
+    .menu-btn {
+        margin-top: 40px;
+    }
+
+    .main-links,
+    nav .login,
+    nav .cart {
+        display: none;
+    }
+
+    nav .menu-btn {
+        display: initial;
+        order: 3;
+        text-align: center;
+        width: 33%;
+    }
+}
+
+@media only screen and (min-width: 1950px) {
+    .nav-items a {
+        font-size: 1.8vw;
+    }
+
+    .login a {
+        font-size: 1.3vw;
+    }
+
+    .cart span {
+        font-size: 1.1vw;
+    }
+
+    .login img {
+        width: 1.6vw;
+    }
+
+    .cart img,
+    .search img,
+    nav input {
+        width: 1.9vw;
+    }
+
+    .search img {
+        margin-bottom: 17px;
+    }
+
+    .logo img {
+        max-width: none;
+    }
+}
+
+/* Media query ------------------------------------------------------------------ END */
