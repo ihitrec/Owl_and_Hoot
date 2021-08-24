@@ -14,6 +14,16 @@ The fourth and final project in Code Institute Full Stack Developer program feat
 - I wish the products had good images from different angles to get a better look of the product.
 
 ### Wireframes
+
+[Homepage](static/images/readme_images/homepage.png)
+
+[Product list](static/images/readme_images/product_list.png)
+
+[Product page](static/images/readme_images/product_page.png)
+
+[Basket](static/images/readme_images/basket.png)
+
+
 ### Colors
 ### Fonts
 
