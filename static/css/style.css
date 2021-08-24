@@ -4,14 +4,18 @@
 /* START ---------------------------------------------------------------- Navigation */
 
 nav {
-    margin-top: 31px;
+    padding-top: 31px;
+    overflow: hidden;
 }
 
 .nav-items {
     padding-left: 7%;
 }
 
-.nav-items>li {
+.logo,
+.search,
+.login,
+.cart {
     width: 12%;
 }
 
@@ -83,6 +87,101 @@ nav .menu-btn {
     display: none;
 }
 
+/* Menu animation taken from Mikael Ainalem 
+at https://codepen.io/ainalem/pen/wvKOEMV */
+
+.menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    margin-left: 50%;
+}
+
+.line {
+    fill: none;
+    stroke: #545252;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+
+.line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+}
+
+.line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+
+.opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+}
+
+.opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+}
+
+.opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+}
+
+/* end of copied code*/
+
+nav svg {
+    width: 40px;
+}
+
+nav button {
+    margin: 0 auto;
+}
+
+.first {
+    order: 4;
+    display: initial !important;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 0;
+}
+
+.second {
+    order: 5;
+    display: initial !important;
+    width: 50%;
+    text-align: end;
+    margin-top: 20px;
+}
+
+.second a {
+    margin-right: 9px;
+}
+
+.third {
+    order: 6;
+    display: initial !important;
+    width: 50%;
+    text-align: start;
+    margin-top: 13px;
+}
+
+.third img {
+    margin-left: 40px;
+}
+
 /* Navigation ------------------------------------------------------------------- END */
 
 /* START ---------------------------------------------------------------- Media query */
@@ -90,7 +189,16 @@ nav .menu-btn {
 @media only screen and (max-width: 1000px) {
     .nav-items {
         display: flex;
+        flex-wrap: wrap;
         padding: 0;
+    }
+
+    .nav-items a {
+        font-size: 23px;
+    }
+
+    .login a {
+        font-size: 18px;
     }
 
     nav .logo {
@@ -105,8 +213,7 @@ nav .menu-btn {
         width: 33%;
     }
 
-    .search input,
-    .menu-btn {
+    .search input {
         margin-top: 40px;
     }
 
@@ -121,6 +228,7 @@ nav .menu-btn {
         order: 3;
         text-align: center;
         width: 33%;
+        margin-top: 10px;
     }
 }
 
