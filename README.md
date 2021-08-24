@@ -28,7 +28,22 @@ The fourth and final project in Code Institute Full Stack Developer program feat
 ### Fonts
 
 ## Technologies used
+
 ##### Languages, frameworks and more
+![HTML5 icon](static/images/readme_images/html-icon.png) HTML5 - webpage markup language for basic structure
+
+![CSS3 icon](static/images/readme_images/css-icon.png) CSS3 - HTML document styling language 
+
+![Bootstrap icon](static/images/readme_images/bootstrap.png) Bootstrap - CSS framework with focus on responsive design
+
+![JavaScript icon](static/images/readme_images/javascript-icon.png) JavaScript - behavior of elements on the website 
+
+![jQuery icon](static/images/readme_images/jquery-icon.png) jQuery - JavaScript library
+
+![Python icon](static/images/readme_images/python.png) Python - backend programming language working together with Flask, MongoDB and Heroku
+
+![Heroku icon](static/images/readme_images/heroku.png) Heroku - cloud deployment platform
+
 ##### Repository, coding environment and version control
 #####  Resources
 
