@@ -45,7 +45,17 @@ The fourth and final project in Code Institute Full Stack Developer program feat
 ![Heroku icon](static/images/readme_images/heroku.png) Heroku - cloud deployment platform
 
 ##### Repository, coding environment and version control
+
+- [Gitpod](https://www.gitpod.io/) - coding environment
+- [Git](https://git-scm.com/) - used for version control
+- [Github](https://www.gitpod.io/) - hosting platform for managing repositories and more
+
 #####  Resources
+
+- [Flaticon](https://www.flaticon.com/) - used for icons
+- [Pexels](https://www.pexels.com/) - homepage images
+- [Google Fonts](https://fonts.google.com/) - source for all fonts on the website
+- [JD](https://www.jdsports.ie/) - source of all products including images and descriptions
 
 ## Testing
 
