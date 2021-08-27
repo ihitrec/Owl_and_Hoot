@@ -6,6 +6,7 @@
 nav {
     padding-top: 31px;
     overflow: hidden;
+    background-color: white;
 }
 
 .nav-items {
@@ -183,6 +184,68 @@ nav button {
 }
 
 /* Navigation ------------------------------------------------------------------- END */
+
+/* START ----------------------------------------------------------------------- Hero */
+
+.hero {
+    background-image: url("../images/hero.jpg");
+    height: 70vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    box-shadow: inset 2px 17px 20px 6px #00000096;
+}
+
+
+.offer {
+    position: sticky;
+    top: 32%;
+    left: 60%;
+    width: 283px;
+}
+
+.offer>* {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.offer img {
+    filter: invert(1);
+    width: 20px;
+    transition: transform .25s ease-in-out;
+}
+
+.offer a:hover>img {
+    transform: translate(7px, 0);
+}
+
+.hero h1 {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 41px;
+}
+
+.hero a {
+    text-decoration: none;
+    font-weight: 200;
+    font-size: 20px;
+    margin-left: 14px;
+}
+
+.hero a:hover {
+    color: white;
+}
+
+.category {
+    height: 2000px;
+    background-color: black;
+}
+
+
+
+/* Hero ------------------------------------------------------------------------- END */
 
 /* START ---------------------------------------------------------------- Media query */
 
