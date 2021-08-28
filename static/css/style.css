@@ -1,3 +1,10 @@
+/* Search by section:
+    Navigation
+    Hero
+    Collection
+    Media query
+*/
+
 /* Roboto font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
@@ -238,14 +245,73 @@ nav button {
     color: white;
 }
 
-.category {
-    height: 2000px;
-    background-color: black;
+/* Hero ------------------------------------------------------------------------- END */
+
+/* START ----------------------------------------------------------------- Collection */
+
+.collection {
+    background-color: #EEEEEE;
+    width: 100%;
+    text-align: center;
+    position: relative;
 }
 
+.male-collection,
+.female-collection {
+    width: 49%;
+    display: inline-block;
+}
 
+.female-collection {
+    text-align: right;
+}
 
-/* Hero ------------------------------------------------------------------------- END */
+.male-collection {
+    text-align: left;
+}
+
+.collection img {
+    width: 80%;
+    margin: 20px 0;
+}
+
+.collection a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+    margin-left: 70px;
+    text-align: left;
+    line-height: 33px;
+}
+
+.collection a:hover {
+    color: white;
+}
+
+.female-collection a {
+    position: absolute;
+    top: 8%;
+}
+
+.male-collection a {
+    position: absolute;
+    bottom: 8%;
+}
+
+.collection a img {
+    filter: invert(1);
+    width: 70px;
+    display: inline-block;
+    transition: transform .25s ease-in-out;
+    margin-top: -23px;
+}
+
+.collection a:hover>img {
+    transform: translate(7px, 0);
+}
+
+/* Collection ------------------------------------------------------------------- END */
 
 /* START ---------------------------------------------------------------- Media query */
 
