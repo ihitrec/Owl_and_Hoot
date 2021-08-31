@@ -283,6 +283,7 @@ nav button {
     margin-left: 70px;
     text-align: left;
     line-height: 33px;
+    max-width: 267px;
 }
 
 .collection a:hover {
@@ -305,6 +306,7 @@ nav button {
     display: inline-block;
     transition: transform .25s ease-in-out;
     margin-top: -23px;
+    vertical-align: text-top;
 }
 
 .collection a:hover>img {
@@ -315,7 +317,59 @@ nav button {
 
 /* START ---------------------------------------------------------------- Media query */
 
+@media only screen and (max-width: 450px) {
+
+    /* Hero */
+    .offer {
+        top: 27%;
+        text-align: center;
+    }
+
+    /* Collection */
+    .collection a {
+        transform: scale(.7);
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+
+    /* Collection */
+    .female-collection,
+    .male-collection {
+        width: 100%;
+        text-align: center;
+    }
+
+    .female-collection a {
+        top: 5%;
+    }
+
+    .male-collection a {
+        bottom: 4%;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+
+    /* Hero */
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero a {
+        font-size: 16px;
+    }
+
+    .collection a {
+        transform: scale(.7);
+        margin-left: 0;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
+
+    /* Nav */
     .nav-items {
         display: flex;
         flex-wrap: wrap;
@@ -361,7 +415,17 @@ nav button {
     }
 }
 
+@media only screen and (max-width: 1100px) {
+
+    /* Hero */
+    .hero {
+        background-attachment: initial
+    }
+}
+
 @media only screen and (min-width: 1950px) {
+
+    /* Nav */
     .nav-items a {
         font-size: 1.8vw;
     }
@@ -390,6 +454,29 @@ nav button {
 
     .logo img {
         max-width: none;
+    }
+
+    /* Hero */
+    .offer {
+        width: fit-content;
+    }
+
+    .hero h1 {
+        font-size: 4vw;
+    }
+
+    .hero a {
+        font-size: 2vw;
+    }
+
+    /* Collection */
+    .collection a {
+        transform: scale(2);
+        margin-left: 217px;
+    }
+
+    .female-collection a {
+        top: 12%;
     }
 }
 
