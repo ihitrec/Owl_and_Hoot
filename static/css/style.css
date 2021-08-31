@@ -2,6 +2,7 @@
     Navigation
     Hero
     Collection
+    Top brands
     Media query
 */
 
@@ -315,6 +316,58 @@ nav button {
 
 /* Collection ------------------------------------------------------------------- END */
 
+/* START ----------------------------------------------------------------- Top brands */
+.top-brands {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-image: url(../images/brands-bckg.jpg);
+    background-size: cover;
+    height: 500px;
+}
+
+
+.top-brands h1 {
+    width: 100%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 60px;
+    margin: 32px 0 -70px;
+    text-transform: uppercase;
+}
+
+.top-brands img {
+    opacity: .8;
+}
+
+.top-brands img:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 7px;
+    padding: 7px;
+}
+
+.adidas img:hover {
+    padding: 17px 10px;
+}
+
+.nike img {
+    width: 244px;
+    margin-top: 10px;
+}
+
+.puma img {
+    width: 200px;
+}
+
+.adidas img {
+    width: 234px;
+    margin-top: 16px;
+}
+
+/* Top brands ------------------------------------------------------------------- END */
+
 /* START ---------------------------------------------------------------- Media query */
 
 @media only screen and (max-width: 450px) {
@@ -364,6 +417,33 @@ nav button {
     .collection a {
         transform: scale(.7);
         margin-left: 0;
+    }
+
+    /* Top brands */
+    .top-brands {
+        text-align: center;
+        height: 600px;
+    }
+
+    .top-brands div {
+        width: 100%;
+    }
+
+    .top-brands h1 {
+        margin: 20px 0;
+        font-size: 40px;
+    }
+
+    .nike img {
+        width: 200px;
+    }
+
+    .puma img {
+        width: 164px;
+    }
+
+    .adidas img {
+        width: 192px;
     }
 }
 
@@ -477,6 +557,29 @@ nav button {
 
     .female-collection a {
         top: 12%;
+    }
+
+    /* Top brands */
+    .top-brands {
+        height: 600px;
+        background-position: 0 -190px;
+    }
+
+    .top-brands h1 {
+        font-size: 3.4vw;
+        margin: 32px 0 -9px;
+    }
+
+    .nike img {
+        width: 280px;
+    }
+
+    .puma img {
+        width: 230px;
+    }
+
+    .adidas img {
+        width: 269px;
     }
 }
 
