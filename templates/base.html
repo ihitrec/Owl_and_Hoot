@@ -78,6 +78,27 @@
 
     {% endblock %}
 
+    <footer>
+        <section class="social-media" aria-label="social media links" tabindex="0">
+            <a href="" target="_blank">
+                <img src="{% static 'images/facebook.png' %}" alt="facebook">
+            </a>
+            <a href="" target="_blank">
+                <img src="{% static 'images/instagram.png' %}" alt="instagram">
+            </a>
+            <a href="" target="_blank">
+                <img src="{% static 'images/twitter.png' %}" alt="twitter">
+            </a>
+        </section>
+        <section class="subscribe" aria-label="subscribe" tabindex="0">
+            <h1>Subscribe</h1>
+            <form action="">
+                <input id="subscribe-input" type="text" placeholder="email">
+                <label for="subscribe-input">get updated on special offers and new collections</label>
+            </form>
+        </section>
+    </footer>
+
     {% if messages %}
     <div class="message-container"></div>
     {% endif %}

@@ -3,6 +3,7 @@
     Hero
     Collection
     Top brands
+    Footer
     Media query
 */
 
@@ -368,6 +369,77 @@ nav button {
 
 /* Top brands ------------------------------------------------------------------- END */
 
+/* START --------------------------------------------------------------------- Footer */
+
+footer {
+    background-color: #2E2E2E;
+    color: white;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin-right: 15px;
+}
+
+footer a {
+    color: transparent;
+}
+
+footer img {
+    filter: invert(1);
+}
+
+.social-media {
+    width: 50%;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscribe::before {
+    content: "";
+    border: 2px solid #FEDE67;
+    height: 42px;
+    border-radius: 10px;
+    margin-right: 8%;
+    margin-left: -4%;
+}
+
+.subscribe {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+footer a:nth-child(2) {
+    margin: 0 35px;
+}
+
+footer form {
+    margin-top: 20px;
+    width: 308px;
+}
+
+footer input {
+    text-align: center;
+    border-radius: 4px;
+    outline: 0;
+    border: 0;
+    width: 100%;
+}
+
+footer label {
+    font-size: 14px;
+}
+
+/* Footer ----------------------------------------------------------------------- END */
+
+
 /* START ---------------------------------------------------------------- Media query */
 
 @media only screen and (max-width: 450px) {
@@ -382,6 +454,24 @@ nav button {
     .collection a {
         transform: scale(.7);
         margin-left: 0;
+    }
+
+    /* Footer */
+    footer {
+        height: 171px !important;
+    }
+
+    .subscribe {
+        width: 100%;
+    }
+
+    footer form {
+        margin-top: 0 !important;
+    }
+
+    .social-media {
+        width: 100%;
+        justify-content: space-evenly;
     }
 }
 
@@ -493,6 +583,42 @@ nav button {
         width: 33%;
         margin-top: 10px;
     }
+
+    /* Footer */
+    footer {
+        height: 130px;
+    }
+
+    .subscribe {
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    footer h1 {
+        margin: 0;
+        width: 100%;
+    }
+
+    footer form {
+        margin-top: -20px;
+    }
+
+    footer input {
+        width: 80%;
+    }
+
+    footer label {
+        font-size: 11px;
+    }
+
+    .subscribe::before {
+        display: none;
+    }
+
+    .social-media {
+        order: 2;
+    }
 }
 
 @media only screen and (max-width: 1100px) {
@@ -500,6 +626,11 @@ nav button {
     /* Hero */
     .hero {
         background-attachment: initial
+    }
+
+    /* Footer */
+    .subscribe::before {
+        margin-left: -15%;
     }
 }
 
@@ -580,6 +711,27 @@ nav button {
 
     .adidas img {
         width: 269px;
+    }
+
+    /* Footer */
+    footer img {
+        width: 40px;
+    }
+
+    footer form {
+        width: 375px;
+    }
+
+    footer input {
+        height: 31px;
+    }
+
+    footer label {
+        font-size: 17px;
+    }
+
+    footer h1 {
+        font-size: 2vw;
     }
 }
 
