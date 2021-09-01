@@ -41,6 +41,16 @@ nav {
     display: inline-block;
 }
 
+#initial {
+    display: initial;
+}
+
+.order {
+    order: 4;
+    width: 100%;
+    text-align: center;
+}
+
 .nav-items a {
     text-decoration: none;
     color: #545252;
@@ -166,6 +176,7 @@ nav button {
     width: 100%;
     margin-top: 20px;
     margin-left: 0;
+    padding: 0;
 }
 
 .second {

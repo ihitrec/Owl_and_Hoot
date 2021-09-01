@@ -23,6 +23,7 @@ function toggleMenu() {
 
     setTimeout(function () {
         $(".main-links").toggleClass("first");
+        $("#initial").toggleClass("order");
         $(".login").toggleClass("second");
         $(".cart").toggleClass("third");
     }, timeframe)
