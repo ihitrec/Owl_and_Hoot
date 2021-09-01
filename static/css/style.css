@@ -208,7 +208,7 @@ nav button {
 /* START ----------------------------------------------------------------------- Hero */
 
 .hero {
-    background-image: url("../images/hero.jpg");
+    background-image: url("../images/hero.webp");
     height: 70vh;
     background-attachment: fixed;
     background-position: center;
@@ -333,7 +333,7 @@ nav button {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-image: url(../images/brands-bckg.jpg);
+    background-image: url("../images/brands-bckg.webp");
     background-size: cover;
     height: 500px;
 }
