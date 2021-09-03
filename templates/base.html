@@ -35,7 +35,7 @@
         <nav>
             <ul class="nav-items">
                 <li class="logo">
-                    <a aria-label="go to homepage" href="#"><img src="{% static 'images/logo.webp' %}" alt="Logo"></a>
+                    <a aria-label="go to homepage" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}" alt="Logo"></a>
                 </li>
                 <li class="search">
                     <img src="{% static 'images/search.webp' %}" alt="Search icon">
@@ -44,13 +44,13 @@
                 <li id="initial">
                     <ul class="main-links">
                         <li>
-                            <a href="#">New</a>
+                            <a href="{% url 'categories' category='all' %}">All</a>
                         </li>
                         <li>
-                            <a href="#">Men</a>
+                            <a href="{% url 'categories' category='male' %}">Men</a>
                         </li>
                         <li>
-                            <a href="#">Women</a>
+                            <a href="{% url 'categories' category='female' %}">Women</a>
                         </li>
                     </ul>
                 </li>
@@ -86,13 +86,13 @@
     <!-- Footer -->
     <footer>
         <section class="social-media" aria-label="social media links" tabindex="0">
-            <a href="#" target="_blank">
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
                 <img src="{% static 'images/facebook.webp' %}" alt="facebook">
             </a>
-            <a href="#" target="_blank">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
                 <img src="{% static 'images/instagram.webp' %}" alt="instagram">
             </a>
-            <a href="#" target="_blank">
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
                 <img src="{% static 'images/twitter.webp' %}" alt="twitter">
             </a>
         </section>
