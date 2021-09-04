@@ -1,5 +1,26 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<div class="category">
+    <section class="filter">
+        <h1>Filter</h1>
+        <p>clear all</p>
+        <h2>Brand</h2>
+
+        <h2>Rating</h2>
+    </section>
+    <section class="products">
+        {% for product in products %}
+        <div class="product">
+            <img src="{{product.img}}" alt="{{product.name}}">
+            <img src="{% static 'images/' %}{{product.brand|lower}}.webp" alt="{{product.brand}} logo">
+            <div class="details">
+                <p>{{product.name}}</p>
+                <p>€{{product.price|floatformat}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+</div>
 
 {% endblock %}

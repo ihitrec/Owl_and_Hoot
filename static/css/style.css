@@ -451,6 +451,56 @@ footer label {
 
 /* Footer ----------------------------------------------------------------------- END */
 
+/* START ------------------------------------------------------------------- Category */
+
+.category {
+    display: flex;
+}
+
+.filter {
+    width: 20%;
+}
+
+.products {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.product {
+    position: relative;
+    width: 320px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+}
+
+.details {
+    width: 300px;
+}
+
+.product p {
+    display: inline;
+}
+
+.details p:nth-child(2) {
+    float: right;
+}
+
+.product img:nth-child(1) {
+    width: 300px;
+    height: 300px;
+}
+
+.product img:nth-child(2) {
+    max-width: 65px;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    opacity: .7;
+}
+
+/* Category --------------------------------------------------------------------- END */
 
 /* START ---------------------------------------------------------------- Media query */
 
