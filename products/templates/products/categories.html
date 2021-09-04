@@ -11,16 +11,25 @@
     </section>
     <section class="products">
         {% for product in products %}
-        <div class="product">
-            <img src="{{product.img}}" alt="{{product.name}}">
-            <img src="{% static 'images/' %}{{product.brand|lower}}.webp" alt="{{product.brand}} logo">
-            <div class="details">
-                <p>{{product.name}}</p>
-                <p>€{{product.price|floatformat}}</p>
+        <a href="#">
+            <div class="product">
+                <img class="product-img" src="{{product.img}}" alt="{{product.name}}">
+                <img class="brand-img" src="{% static 'images/' %}{{product.brand|lower}}.webp" alt="{{product.brand}} logo">
+                <div class="details">
+                    <p>{{product.name}}</p>
+                    <p>€{{product.price|floatformat}}</p>
+                </div>
+                <div class="rating">
+                    {{product.rating}}
+                </div>
             </div>
-        </div>
+        </a>
         {% endfor %}
     </section>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+<script src="{% static 'js/rating.js' %}"></script>
 {% endblock %}

@@ -471,6 +471,11 @@ footer label {
 .product {
     position: relative;
     width: 320px;
+}
+
+.products a {
+    color: black;
+    text-decoration: none;
     margin-bottom: 50px;
     margin-right: 50px;
 }
@@ -487,17 +492,40 @@ footer label {
     float: right;
 }
 
-.product img:nth-child(1) {
+.product-img {
     width: 300px;
     height: 300px;
+    border-radius: 6px;
 }
 
-.product img:nth-child(2) {
+.brand-img {
     max-width: 65px;
     position: absolute;
     top: -20px;
     left: -20px;
     opacity: .7;
+}
+
+.rating {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    width: 20px;
+}
+
+.rating img {
+    width: 18px;
+    opacity: .8;
+}
+
+.rating p {
+    font-size: 14px;
+    opacity: .7;
+}
+
+.product:hover img,
+.product:hover p {
+    opacity: 1;
 }
 
 /* Category --------------------------------------------------------------------- END */
