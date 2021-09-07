@@ -467,6 +467,7 @@ footer label {
 .filter h2 {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    color: #646464;
 }
 
 .filter h1 {
@@ -488,7 +489,7 @@ footer label {
     margin-right: 18px;
     font-size: 16px;
     text-decoration: underline;
-    color: gray;
+    color: #646464;
 }
 
 .filter label {
@@ -497,15 +498,32 @@ footer label {
     cursor: pointer;
     font-size: 16px;
     margin: 3px 6px;
+    font-weight: 100;
+}
+
+input[type=checkbox]:checked {
+    background-color: #646464;
 }
 
 .brand-filter input {
     appearance: none;
     width: 13px;
     height: 13px;
-    border: 1px solid gray;
-    border-radius: 4px;
+    border: 1px solid #646464;
+    border-radius: 3px;
     cursor: pointer;
+}
+
+.rating-filter label {
+    opacity: .4;
+}
+
+.rating-filter label:hover {
+    opacity: 1;
+}
+
+.checked-rating {
+    opacity: 1 !important;
 }
 
 .rating-filter input {
