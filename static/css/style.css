@@ -457,10 +457,67 @@ footer label {
     display: flex;
 }
 
+/* Filter */
 .filter {
     width: 20%;
+    padding-left: 3%;
 }
 
+.filter h1,
+.filter h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.filter h1 {
+    display: inline-block;
+    font-size: 21px;
+    margin-bottom: 28px;
+    margin-bottom: 18px;
+}
+
+.filter h2 {
+    font-size: 19px;
+    margin-top: 18px;
+}
+
+.filter button {
+    background-color: white;
+    border: 0;
+    float: right;
+    margin-right: 18px;
+    font-size: 16px;
+    text-decoration: underline;
+    color: gray;
+}
+
+.filter label {
+    display: block;
+    font-size: 19px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 3px 6px;
+}
+
+.brand-filter input {
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.rating-filter input {
+    appearance: none;
+    margin-left: -4px;
+}
+
+.rating-filter img {
+    width: 15px;
+}
+
+/* Products */
 .products {
     width: 80%;
     display: flex;

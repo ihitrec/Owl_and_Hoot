@@ -3,13 +3,64 @@
 {% block content %}
 <div class="category">
     <section class="filter">
-        <h1>Filter</h1>
-        <p>clear all</p>
-        <h2>Brand</h2>
-
-        <h2>Rating</h2>
+        <h1 tabindex="0">Filter</h1>
+        <a href="#product-list" tabindex="0" aria-label="skip to product list"></a>
+        <button>clear all</button>
+        <div class="brand-filter">
+            <h2 tabindex="0">Brand</h2>
+            <label>
+                <input type="checkbox">
+                Nike
+            </label>
+            <label for="puma">
+                <input type="checkbox" name="puma" id="puma">
+                Puma
+            </label>
+            <label for="adidas">
+                <input type="checkbox" name="adidas" id="adidas" checked>
+                Adidas
+            </label>
+        </div>
+        <div class="rating-filter">
+            <h2 tabindex="0">Rating</h2>
+            <label for="1-star">
+                <input type="checkbox" name="1-star" id="1-star" checked>
+                1
+                <img src="{% static 'images/star-full.png' %}" alt="star">
+            </label>
+            <label for="2-star">
+                <input type="checkbox" name="2-star" id="2-star">
+                2
+                <img src="{% static 'images/star-full.png' %}" alt="stars">
+                <img src="{% static 'images/star-full.png' %}" alt="">
+            </label>
+            <label for="3-star">
+                <input type="checkbox" name="3-star" id="3-star">
+                3
+                <img src="{% static 'images/star-full.png' %}" alt="stars">
+                <img src="{% static 'images/star-full.png' %}" alt="">
+                <img src="{% static 'images/star-full.png' %}" alt="">
+            </label>
+            <label for="4-star">
+                <input type="checkbox" name="4-star" id="4-star">
+                4
+                <img src="{% static 'images/star-full.png' %}" alt="stars">
+                <img src="{% static 'images/star-full.png' %}" alt="">
+                <img src="{% static 'images/star-full.png' %}" alt="">
+                <img src="{% static 'images/star-full.png' %}" alt="">
+            </label>
+            <label for="5-star">
+                <input type="checkbox" name="5-star" id="5-star">
+                5
+                <img src="{% static 'images/star-full.png' %}" alt="stars">
+                <img src="{% static 'images/star-full.png' %}" alt="">
+                <img src="{% static 'images/star-full.png' %}" alt="">
+                <img src="{% static 'images/star-full.png' %}" alt="">
+                <img src="{% static 'images/star-full.png' %}" alt="">
+            </label>
+        </div>
     </section>
-    <section class="products">
+    <section id="product-list" class="products" aria-label="product list">
         {% for product in products %}
         <a href="#">
             <div class="product">
