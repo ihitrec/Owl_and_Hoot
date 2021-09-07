@@ -41,8 +41,8 @@
                     <img src="{% static 'images/search.webp' %}" alt="Search icon">
                     <input type="search" aria-label="find products" name="search" id="search">
                 </li>
-                <li id="initial">
-                    <ul class="main-links">
+                <li id="initial" role="presentation">
+                    <ul class="main-links" tabindex="0" aria-label="category links">
                         <li>
                             <a href="{% url 'categories' category='all' %}">All</a>
                         </li>

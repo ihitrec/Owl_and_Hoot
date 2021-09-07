@@ -13,13 +13,13 @@
         {% for product in products %}
         <a href="#">
             <div class="product">
-                <img class="product-img" src="{{product.img}}" alt="{{product.name}}">
-                <img class="brand-img" src="{% static 'images/' %}{{product.brand|lower}}.webp" alt="{{product.brand}} logo">
+                <img aria-hidden="true" class="product-img" src="{{product.img}}" alt="{{product.name}}">
+                <img aria-hidden="true" class="brand-img" src="{% static 'images/' %}{{product.brand|lower}}.webp" alt="{{product.brand}} logo">
                 <div class="details">
                     <p>{{product.name}}</p>
                     <p>€{{product.price|floatformat}}</p>
                 </div>
-                <div class="rating">
+                <div class="rating" {% if product.rating > 0 %} aria-label="rated {{product.rating}}" {% endif %}>
                     {{product.rating}}
                 </div>
             </div>
