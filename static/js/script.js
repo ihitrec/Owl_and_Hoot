@@ -49,7 +49,7 @@ $(document).ready(function () {
     // If filter off show all products, else show selected
     function filterRating() {
         let inputs = $(".rating-filter input");
-        checked = [];
+        let checked = [];
         for (i = 0; i < inputs.length; i++) {
             if ($(inputs[i]).is(':checked')) {
                 checked.push(parseInt($(inputs[i]).val()));
@@ -57,10 +57,10 @@ $(document).ready(function () {
         }
         let products = $(".product");
         for (i = 0; i < products.length; i++) {
-
             let productRating = parseInt($(products[i]).find(".rating").text())
             if (checked.length === 0) {
                 $(".product").css("display", "block");
+                break;
             } else if (!(checked.includes(productRating))) {
                 $(products[i]).css("display", "none");
             } else {
@@ -68,4 +68,43 @@ $(document).ready(function () {
             }
         }
     }
+
+
+    // If brand filter off show all products, else show selected
+    $(".brand-filter label").click(toggleBrand);
+
+    // preventDefault alrernative for double click
+    let brandCount = 0;
+
+    function toggleBrand() {
+        if (brandCount === 0) {
+            brandCount++
+            return;
+        }
+        brandCount = 0
+
+
+        let inputs = $(".brand-filter input");
+        checked = [];
+
+        for (i = 0; i < inputs.length; i++) {
+            if ($(inputs[i]).is(':checked')) {
+                checked.push($(inputs[i]).val().toLowerCase());
+            }
+        }
+
+        let products = $(".product");
+        for (i = 0; i < products.length; i++) {
+            let brandName = $(products[i]).attr("id")
+            if (checked.length === 0) {
+                $(".product").parent().css("display", "block");
+                break;
+            } else if (!(checked.includes(brandName))) {
+                $(products[i]).parent().css("display", "none");
+            } else {
+                $(products[i]).parent().css("display", "block");
+            }
+        }
+    }
+
 });
