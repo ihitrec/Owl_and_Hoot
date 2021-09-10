@@ -35,7 +35,10 @@ $(document).ready(function () {
 
     /* Filtering */
 
-    // Toggle rating checkbox on label click
+    // Toggle brand filter
+    $(".brand-filter input").click(filter);
+
+    // Toggle rating filter
     $($(".rating-filter label")).click(toggleRating);
 
     function toggleRating(event) {
@@ -43,70 +46,43 @@ $(document).ready(function () {
         let currentInput = $($(this).children()[0]);
         currentInput.prop('checked', (!currentInput.is(':checked')));
         $(this).toggleClass("checked-rating");
-        filterRating()
+        filter()
     }
 
-    // If filter off show all products, else show selected
-    function filterRating() {
-        let inputs = $(".rating-filter input");
+    // Hide products not matching single or both filters
+    function filter() {
+
+        let inputs = $(".filter input");
         let checked = [];
         for (i = 0; i < inputs.length; i++) {
             if ($(inputs[i]).is(':checked')) {
-                checked.push(parseInt($(inputs[i]).val()));
+                checked.push($(inputs[i]).val());
             }
         }
+
         let products = $(".product");
         for (i = 0; i < products.length; i++) {
-            let productRating = parseInt($(products[i]).find(".rating").text())
+
+            let productRating = parseInt($(products[i]).find(".rating").text()).toString();
+            let productBrand = $(products[i]).attr("id");
             if (checked.length === 0) {
                 $(".product").css("display", "block");
                 break;
-            } else if (!(checked.includes(productRating))) {
-                $(products[i]).css("display", "none");
+            } else if (!$(".brand-filter input").is(':checked') || !$(".rating-filter input").is(':checked')) {
+                if (checked.includes(productRating) || checked.includes(productBrand)) {
+                    $(products[i]).css("display", "block");
+                } else {
+                    $(products[i]).css("display", "none");
+                }
             } else {
-                $(products[i]).css("display", "block");
+                if (checked.includes(productRating) && checked.includes(productBrand)) {
+                    $(products[i]).css("display", "block");
+                } else {
+                    $(products[i]).css("display", "none");
+                }
             }
         }
     }
-
-
-    // If brand filter off show all products, else show selected
-    $(".brand-filter label").click(toggleBrand);
-
-    // preventDefault alrernative for double click
-    let brandCount = 0;
-
-    function toggleBrand() {
-        if (brandCount === 0) {
-            brandCount++
-            return;
-        }
-        brandCount = 0
-
-
-        let inputs = $(".brand-filter input");
-        checked = [];
-
-        for (i = 0; i < inputs.length; i++) {
-            if ($(inputs[i]).is(':checked')) {
-                checked.push($(inputs[i]).val().toLowerCase());
-            }
-        }
-
-        let products = $(".product");
-        for (i = 0; i < products.length; i++) {
-            let brandName = $(products[i]).attr("id")
-            if (checked.length === 0) {
-                $(".product").parent().css("display", "block");
-                break;
-            } else if (!(checked.includes(brandName))) {
-                $(products[i]).parent().css("display", "none");
-            } else {
-                $(products[i]).parent().css("display", "block");
-            }
-        }
-    }
-
 
     /*  Sort  */
 
