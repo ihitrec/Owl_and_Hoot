@@ -1,4 +1,12 @@
+/* Search by section:
+   Nav menu
+   Filtering
+   Sorting
+*/
+
 $(document).ready(function () {
+
+    /* Nav menu */
 
     // Animate nav dropdown on menu btn click
     $("svg").click(toggleMenu);
@@ -84,7 +92,7 @@ $(document).ready(function () {
         }
     }
 
-    /*  Sort  */
+    /*  Sorting  */
 
     $('#sort').on('change', sorted);
 
