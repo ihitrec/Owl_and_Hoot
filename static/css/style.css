@@ -543,6 +543,18 @@ input[type=checkbox]:checked {
     justify-content: space-evenly;
 }
 
+.sort-container {
+    width: 90%;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.sort-container select {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
 .product {
     position: relative;
     width: 320px;

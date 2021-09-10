@@ -107,4 +107,40 @@ $(document).ready(function () {
         }
     }
 
+
+    /*  Sort  */
+
+    $('#sort').on('change', sorted);
+
+    // Sort products by date or price
+    function sorted() {
+
+        let newOrder;
+        let products = $("#product-list a")
+
+        if ($(this).val() === "newest") {
+            newOrder = $(products.toArray().sort(function (a, b) {
+                aVal = Date.parse(a.getAttribute("data-date"));
+                bVal = Date.parse(b.getAttribute("data-date"));
+                return aVal - bVal;
+            }));
+        } else if ($(this).val() === "low") {
+            newOrder = $(products.toArray().sort(function (a, b) {
+                aVal = parseInt(a.getAttribute("data-price"));
+                bVal = parseInt(b.getAttribute("data-price"));
+                return aVal - bVal;
+            }));
+        } else if ($(this).val() === "high") {
+            newOrder = $(products.toArray().sort(function (a, b) {
+                aVal = parseInt(a.getAttribute("data-price"));
+                bVal = parseInt(b.getAttribute("data-price"));
+                return bVal - aVal;
+            }));
+        }
+
+        // Replace old order of links with the new one
+        $("#product-list").find('a').remove();
+        $("#product-list").append(newOrder);
+    }
+
 });
