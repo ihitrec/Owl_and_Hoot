@@ -621,6 +621,17 @@ input[type=checkbox]:checked {
 
 @media only screen and (max-width: 450px) {
 
+    /* Nav */
+    nav {
+        padding-top: 0;
+    }
+
+    .logo img {
+        margin-top: -4px;
+        margin-left: -3%;
+        min-width: 126px;
+    }
+
     /* Hero */
     .offer {
         top: 27%;
@@ -856,7 +867,7 @@ input[type=checkbox]:checked {
 
     /* Nav */
     .nav-items a {
-        font-size: 1.8vw;
+        font-size: 1.6vw;
     }
 
     .login a {
@@ -874,7 +885,7 @@ input[type=checkbox]:checked {
     .cart img,
     .search img,
     nav input {
-        width: 1.9vw;
+        width: 1.6vw;
     }
 
     .search img {
@@ -882,7 +893,7 @@ input[type=checkbox]:checked {
     }
 
     .logo img {
-        max-width: none;
+        max-width: 200px;
     }
 
     /* Hero */
@@ -952,11 +963,12 @@ input[type=checkbox]:checked {
 
     /* Footer */
     footer img {
-        width: 40px;
+        width: 36px;
     }
 
     footer form {
         width: 375px;
+        text-align: center;
     }
 
     footer input {
@@ -964,11 +976,29 @@ input[type=checkbox]:checked {
     }
 
     footer label {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     footer h1 {
-        font-size: 2vw;
+        font-size: 1.65vw;
+    }
+}
+
+@media only screen and (min-width: 2400px) {
+
+    /* Footer */
+    .nav-items a {
+        font-size: 1.5vw;
+    }
+
+    .login a {
+        font-size: 1.2vw;
+    }
+
+    .cart img,
+    .search img,
+    nav input {
+        width: 1.6vw;
     }
 }
 
