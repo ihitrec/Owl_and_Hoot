@@ -70,7 +70,7 @@
             </select>
         </div>
         {% for product in products %}
-        <a data-price="{{product.price}}" data-date="{{product.date|date:'Y-m-d H:i'}}" href="#">
+        <a data-price="{{product.price}}" data-date="{{product.date|date:'Y-m-d H:i'}}" href="{% url 'product' product=product.id %}">
             <div class="product" id="{{product.brand|lower}}">
                 <img aria-hidden="true" class="product-img" src="{{product.img}}" alt="{{product.name}}">
                 <img aria-hidden="true" class="brand-img" src="{% static 'images/' %}{{product.brand|lower}}.webp" alt="{{product.brand}} logo">
