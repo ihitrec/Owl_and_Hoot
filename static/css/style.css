@@ -633,6 +633,25 @@ input[type=checkbox]:checked {
         margin-left: 0;
     }
 
+    /* Category */
+    .products a {
+        margin-right: 0;
+        margin-left: 0 !important;
+    }
+
+    .product {
+        width: 100%;
+    }
+
+    .product-img {
+        width: 90%;
+        height: 90%;
+    }
+
+    .details {
+        width: 90%;
+    }
+
     /* Footer */
     footer {
         height: 171px !important;
@@ -712,6 +731,27 @@ input[type=checkbox]:checked {
 
     .adidas img {
         width: 192px;
+    }
+
+    /* Category */
+    .filter {
+        width: 100%;
+        max-width: 348px;
+    }
+
+    .category {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sort-container {
+        width: 100%;
+        text-align: center;
+        margin: 42px auto;
+    }
+
+    .products a {
+        margin-left: 70px;
     }
 }
 
@@ -889,6 +929,25 @@ input[type=checkbox]:checked {
 
     .adidas img {
         width: 269px;
+    }
+
+    /* Category */
+    .filter button,
+    .product p,
+    #sort {
+        font-size: 19px;
+    }
+
+    .filter label {
+        font-size: 20px;
+    }
+
+    .filter h1 {
+        font-size: 25px;
+    }
+
+    .filter h2 {
+        font-size: 24px;
     }
 
     /* Footer */
