@@ -92,6 +92,12 @@ $(document).ready(function () {
         }
     }
 
+    // Turn on the filter when brand link is clicked
+    if ($(".brand-filter").length === 1) {
+        let link = window.location.href.split("/");
+        $(`#${link[link.length - 2]}`).prop('checked', true);
+    }
+
     // Remember last filter when using back btn in browser
     if ($(".filter input").is(':checked')) {
         let ratingInput = $(".rating-filter input")

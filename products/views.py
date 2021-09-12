@@ -3,7 +3,14 @@ from .models import Product
 
 
 def categories(request, category):
-    products = Product.objects.all()
+    if category in ['all', 'puma', 'nike', 'adidas']:
+        products = Product.objects.all()
+    elif category == 'female':
+        products = Product.objects.filter(gender='female')
+    elif category == 'male':
+        products = Product.objects.filter(gender='male')
+    elif category == 'sale':
+        products = Product.objects.exclude(sale_price__isnull=True)
     return render(request, 'products/categories.html', {'products': products})
 
 
