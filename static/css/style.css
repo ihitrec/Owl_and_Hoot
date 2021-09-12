@@ -541,7 +541,7 @@ input[type=checkbox]:checked {
     width: 80%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .no-products {
@@ -566,13 +566,13 @@ input[type=checkbox]:checked {
 .product {
     position: relative;
     width: 320px;
+    margin: 0 25px;
 }
 
 .products a {
     color: black;
     text-decoration: none;
     margin-bottom: 50px;
-    margin-right: 50px;
 }
 
 .details {
@@ -839,10 +839,6 @@ input[type=checkbox]:checked {
         width: 100%;
         text-align: center;
         margin: 42px auto;
-    }
-
-    .products a {
-        margin-left: 70px;
     }
 }
 
