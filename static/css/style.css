@@ -695,6 +695,72 @@ input[type=checkbox]:checked {
     margin-right: 31px;
 }
 
+/* Form */
+
+.product-container form {
+    text-align: center;
+    user-select: none;
+}
+
+.sizes label {
+    cursor: pointer;
+    margin: 0 4px;
+    font-size: 22px;
+    padding-left: 5px;
+}
+
+.sizes input {
+    width: 1px;
+    height: 1px;
+    appearance: none;
+}
+
+.selected-size {
+    border-bottom: 2px solid #FFC107;
+}
+
+.add-to-cart {
+    margin-top: 17px;
+}
+
+#price-span {
+    font-size: 22px;
+    border-right: 1px solid #656565;
+    padding-right: 13px;
+    margin-right: 12px;
+}
+
+.add-to-cart button {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.plus-minus {
+    margin: 0 5px;
+    font-size: 33px;
+    line-height: 31px;
+    cursor: pointer;
+}
+
+.add-to-cart input {
+    outline: none;
+    width: fit-content;
+    height: 30px;
+    font-size: 21px;
+    font-weight: 300;
+    border: none;
+    text-align: center;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 /* Product page ----------------------------------------------------------------- END */
 
 /* START ---------------------------------------------------------------- Media query */

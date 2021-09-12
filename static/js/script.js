@@ -2,6 +2,7 @@
    Nav menu
    Filtering
    Sorting
+   Product
 */
 
 $(document).ready(function () {
@@ -157,4 +158,24 @@ $(document).ready(function () {
         sorted()
     }
 
+    /*  Product */
+
+    // Add border on chosen size
+    $(':radio[name="size"]').change(function () {
+        $(".sizes label").removeClass("selected-size");
+        $(this).parent().toggleClass("selected-size");
+    });
+
+    // Increase or decrease product count on symbol click
+    $(".plus-minus").click(updateQuantity)
+
+    function updateQuantity() {
+        let currentVal = $(".add-to-cart input").val();
+        let operation = $(this).attr("data-operation");
+        let newVal = eval(`${currentVal}${operation}1`)
+        if (newVal < 1) {
+            newVal = 0;
+        }
+        $(".add-to-cart input").val(newVal);
+    }
 });

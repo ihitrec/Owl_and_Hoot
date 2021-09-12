@@ -14,6 +14,34 @@
         </div>
         <button>Add rating</button>
         <p>{{product.description}}</p>
+        <form action="#">
+            <div class="sizes">
+                <label for="xs">XS
+                    <input type="radio" id="xs" name="size" value="xs" required>
+                </label>
+                <label for="s">S
+                    <input type="radio" id="s" name="size" value="s">
+                </label>
+                <label for="m">M
+                    <input type="radio" id="m" name="size" value="m">
+                </label>
+                <label for="l">L
+                    <input type="radio" id="l" name="size" value="l">
+                </label>
+                <label for="xl">XL
+                    <input type="radio" id="xl" name="size" value="xl">
+                </label>
+            </div>
+            <div class="add-to-cart">
+                <span id="price-span">€{{product.price}}</span>
+                <button type="submit">
+                    Add to cart
+                </button>
+                <span class="plus-minus" data-operation="+">&#43;</span>
+                <input type="number" min="1" max="99" name="num-of-products" id="num-of-products" value="1" required>
+                <span class="plus-minus" data-operation="-">&#8722;</span>
+            </div>
+        </form>
     </section>
 </div>
 {% endblock %}
