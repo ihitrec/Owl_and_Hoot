@@ -90,6 +90,14 @@ $(document).ready(function () {
                 }
             }
         }
+
+        if (!$(".product").is(":visible")) {
+            $(".no-products").css('display', 'block');
+            $(".sort-container").css('display', 'none');
+        } else {
+            $(".no-products").css('display', 'none');
+            $(".sort-container").css('display', 'block');
+        }
     }
 
     // Turn on the filter when brand link is clicked
