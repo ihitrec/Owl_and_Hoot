@@ -92,6 +92,17 @@ $(document).ready(function () {
         }
     }
 
+    // Remember last filter when using back btn in browser
+    if ($(".filter input").is(':checked')) {
+        let ratingInput = $(".rating-filter input")
+        for (i = 0; i < ratingInput.length; i++) {
+            if ($(ratingInput[i]).is(':checked')) {
+                $(ratingInput[i]).parent().toggleClass("checked-rating");
+            }
+        }
+        filter()
+    }
+
     /*  Sorting  */
 
     $('#sort').on('change', sorted);
