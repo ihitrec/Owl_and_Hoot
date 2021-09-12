@@ -1,6 +1,23 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-{{product}}
+<div class="product-container">
+    <section id="product-img">
+        <img src="{{product.img}}" alt="">
+    </section>
+    <section class="product-desc">
+        <div></div>
+        <h1>{{product.name}}</h1>
+        <img aria-hidden="true" id="brand-img" src="{% static 'images/' %}{{product.brand|lower}}.webp" alt="{{product.brand}} logo">
+        <div class="rating" id="rating" {% if product.rating > 0 %} aria-label="rated {{product.rating}}" {% endif %}>
+            {{product.rating}}
+        </div>
+        <button>Add rating</button>
+        <p>{{product.description}}</p>
+    </section>
+</div>
+{% endblock %}
 
+{% block postloadjs %}
+<script src="{% static 'js/rating.js' %}"></script>
 {% endblock %}

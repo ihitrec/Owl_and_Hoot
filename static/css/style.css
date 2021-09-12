@@ -3,6 +3,7 @@
     Hero
     Collection
     Top brands
+    Product page
     Footer
     Media query
 */
@@ -616,6 +617,78 @@ input[type=checkbox]:checked {
 }
 
 /* Category --------------------------------------------------------------------- END */
+
+/* START --------------------------------------------------------------- Product page */
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    color: #595858;
+}
+
+.product-desc {
+    width: 450px;
+}
+
+.product-desc h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    width: fit-content;
+    padding: 0 20px;
+    text-align: center;
+    color: #656565;
+    background-color: #f3f3f3;
+    font-size: 32px;
+    display: inline-block;
+}
+
+#brand-img {
+    margin-left: 25px;
+    vertical-align: top;
+    width: 60px;
+    opacity: .75;
+}
+
+.product-desc p {
+    font-size: 17px;
+    width: 450px;
+}
+
+.product-desc button {
+    background-color: transparent;
+    border: none;
+    display: inline-block;
+    vertical-align: top;
+    color: #656565;
+}
+
+#rating {
+    position: initial;
+    width: 97px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#rating img,
+#rating p {
+    opacity: 1;
+}
+
+#product-img {
+    width: 50%;
+    text-align: right;
+}
+
+#product-img img {
+    max-width: 400px;
+    border-radius: 13px;
+    margin-right: 31px;
+}
+
+/* Product page ----------------------------------------------------------------- END */
 
 /* START ---------------------------------------------------------------- Media query */
 
