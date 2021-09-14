@@ -8,6 +8,9 @@
     Media query
 */
 
+/* Source Sans Pro font */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;1,200;1,300&display=swap');
+
 /* Roboto font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
@@ -291,13 +294,14 @@ nav button {
 
 .collection a {
     text-decoration: none;
-    font-weight: 400;
-    font-size: 40px;
+    font-weight: 300;
+    font-size: 36px;
     color: white;
     margin-left: 70px;
     text-align: left;
     line-height: 33px;
-    max-width: 267px;
+    max-width: 236px;
+    font-family: 'Roboto';
 }
 
 .collection a:hover {
@@ -396,6 +400,7 @@ footer h1 {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     margin-right: 15px;
+    font-size: 27px;
 }
 
 footer a {
@@ -404,6 +409,7 @@ footer a {
 
 footer img {
     filter: invert(1);
+    width: 29px;
 }
 
 .social-media {
@@ -417,6 +423,7 @@ footer img {
 .subscribe::before {
     content: "";
     border: 2px solid #FEDE67;
+    background-color: #FEDE67;
     height: 42px;
     border-radius: 10px;
     margin-right: 8%;
@@ -435,7 +442,7 @@ footer a:nth-child(2) {
 
 footer form {
     margin-top: 20px;
-    width: 308px;
+    width: 242px;
 }
 
 footer input {
@@ -447,7 +454,7 @@ footer input {
 }
 
 footer label {
-    font-size: 14px;
+    font-size: 11px;
 }
 
 /* Footer ----------------------------------------------------------------------- END */
@@ -637,7 +644,7 @@ input[type=checkbox]:checked {
 }
 
 .product-desc {
-    width: 450px;
+    width: 430px;
 }
 
 .product-desc h1 {
@@ -648,20 +655,22 @@ input[type=checkbox]:checked {
     text-align: center;
     color: #656565;
     background-color: #f3f3f3;
-    font-size: 32px;
+    font-size: 29px;
     display: inline-block;
 }
 
 #brand-img {
     margin-left: 25px;
+    margin-right: 10px;
     vertical-align: top;
     width: 60px;
     opacity: .75;
 }
 
 .product-desc p {
-    font-size: 17px;
-    width: 450px;
+    font-size: 16px;
+    max-width: 450px;
+    margin-top: 15px;
 }
 
 .product-desc button {
@@ -677,6 +686,7 @@ input[type=checkbox]:checked {
     width: 97px;
     display: inline-block;
     margin-left: 10px;
+    line-height: 1px;
 }
 
 #rating img,
@@ -685,7 +695,7 @@ input[type=checkbox]:checked {
 }
 
 #product-img {
-    width: 50%;
+    width: 49%;
     text-align: right;
 }
 
@@ -700,6 +710,7 @@ input[type=checkbox]:checked {
 .product-container form {
     text-align: center;
     user-select: none;
+    font-family: 'Source Sans Pro';
 }
 
 .sizes label {
@@ -725,7 +736,7 @@ input[type=checkbox]:checked {
 
 #price-span {
     font-size: 22px;
-    border-right: 1px solid #656565;
+    border-right: 1px solid #948e8e;
     padding-right: 13px;
     margin-right: 12px;
 }
@@ -733,6 +744,7 @@ input[type=checkbox]:checked {
 .add-to-cart button {
     font-size: 20px;
     font-weight: 300;
+    vertical-align: bottom;
 }
 
 .plus-minus {
@@ -740,6 +752,7 @@ input[type=checkbox]:checked {
     font-size: 33px;
     line-height: 31px;
     cursor: pointer;
+    vertical-align: bottom;
 }
 
 .add-to-cart input {
@@ -798,6 +811,7 @@ input::-webkit-inner-spin-button {
 
     .product {
         width: 100%;
+        margin: 0;
     }
 
     .product-img {
@@ -807,6 +821,25 @@ input::-webkit-inner-spin-button {
 
     .details {
         width: 90%;
+    }
+
+    /* Product page */
+    #brand-img {
+        display: none;
+    }
+
+    .product-desc h1 {
+        font-size: 23px;
+        width: 100%;
+    }
+
+    .add-to-cart {
+        margin-top: 0;
+    }
+
+    #price-span {
+        display: block;
+        border: none;
     }
 
     /* Footer */
@@ -905,6 +938,29 @@ input::-webkit-inner-spin-button {
         width: 100%;
         text-align: center;
         margin: 42px auto;
+    }
+
+    /* Product page*/
+    #product-img {
+        width: fit-content;
+        text-align: center;
+        margin: 0 auto 35px;
+    }
+
+    #product-img img {
+        margin-right: 0;
+        width: 94%;
+    }
+
+    .product-desc {
+        width: fit-content;
+        margin: 0 auto;
+        max-width: 400px;
+        padding: 10px;
+    }
+
+    #rating {
+        width: fit-content;
     }
 }
 
@@ -1101,6 +1157,13 @@ input::-webkit-inner-spin-button {
 
     .filter h2 {
         font-size: 24px;
+    }
+
+    /* Product page */
+    .product-container {
+        transform: scale(1.5);
+        margin-top: 115px;
+        margin-bottom: 200px;
     }
 
     /* Footer */
