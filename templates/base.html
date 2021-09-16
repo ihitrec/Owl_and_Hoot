@@ -38,8 +38,10 @@
                     <a aria-label="go to homepage" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}" alt="Logo"></a>
                 </li>
                 <li class="search">
-                    <img src="{% static 'images/search.webp' %}" alt="Search icon">
-                    <input type="search" aria-label="find products" name="search" id="search">
+                    <form id="search" action="#">
+                        <img src="{% static 'images/search.webp' %}" alt="Search icon">
+                        <input type="search" aria-label="find products" name="search" id="search" autocomplete="off">
+                    </form>
                 </li>
                 <li id="initial" role="presentation">
                     <ul class="main-links" tabindex="0" aria-label="category links">

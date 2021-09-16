@@ -26,18 +26,24 @@ nav {
     padding-left: 7%;
 }
 
+.search {
+    width: 20%;
+    padding-right: 8%;
+    cursor: pointer;
+}
+
 .logo,
-.search,
 .login,
 .cart {
     width: 12%;
 }
 
 .main-links {
-    width: 50%;
+    width: 42%;
     display: inline-block;
     text-align: center;
-    margin-left: -3%;
+    padding: 0;
+    padding-right: 8%;
 }
 
 .nav-items li {
@@ -74,6 +80,18 @@ nav {
 .search img {
     width: 23px;
     transform: scaleX(-1);
+}
+
+.highlight-search {
+    background-color: #f9efd0c5;
+    padding: 5px;
+    width: 29px !important;
+    border-radius: 20px;
+}
+
+.wide-search {
+    position: absolute;
+    background-color: white;
 }
 
 .logo img {
@@ -1162,8 +1180,8 @@ input::-webkit-inner-spin-button {
     /* Product page */
     .product-container {
         transform: scale(1.5);
-        margin-top: 115px;
-        margin-bottom: 200px;
+        width: 66%;
+        margin: 115px auto 200px;
     }
 
     /* Footer */

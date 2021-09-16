@@ -1,5 +1,6 @@
 /* Search by section:
    Nav menu
+   Search
    Filtering
    Sorting
    Product
@@ -40,6 +41,71 @@ $(document).ready(function () {
             $(".menu-btn").css("pointer-events", "initial")
         }, 500)
 
+    }
+
+    /* Search */
+
+    $(".search input").click(expandSearch);
+    // Search open animation depending on screen size
+    function expandSearch() {
+        if ($(window).width() < 750) {
+            $(".search").addClass("wide-search");
+            $(".logo, .menu-btn").css("opacity", "0");
+            $(".search").animate({
+                width: "100%",
+            });
+        } else {
+            $(".search").animate({
+                paddingRight: "0%"
+            });
+        }
+        $(".search").find("input").animate({
+            width: "70%",
+        });
+    }
+
+    $(".search input").focusout(collapseSearch);
+    // Close animation depending on scr size, prevent multiple clicks
+    function collapseSearch() {
+        $(".search input").css("pointer-events", "none")
+        if ($(window).width() < 750) {
+            $(".search").animate({
+                    width: "33%",
+                },
+                function () {
+                    $(".search").removeClass("wide-search");
+                    $(".logo, .menu-btn").css("opacity", "1");
+                });
+        } else {
+            $(".search ").animate({
+                paddingRight: "8%"
+            });
+        }
+        $(".search input").animate({
+            width: "20px"
+        }, function () {
+            $(".search input").val("");
+            highlight();
+            $(".search input").css("pointer-events", "auto")
+        });
+    }
+
+    $(".search input").on("input", highlight);
+    // Indicate form submit btn
+    function highlight() {
+        if ($(".search input").val().length > 0) {
+            $(".search img").addClass("highlight-search")
+        } else {
+            $(".search img").removeClass("highlight-search")
+        }
+    }
+
+    $(".search img").click(submitSearch)
+    // Submit form
+    function submitSearch() {
+        if ($(".search img").hasClass("highlight-search")) {
+            $("#search").submit();
+        }
     }
 
     /* Filtering */
@@ -174,7 +240,7 @@ $(document).ready(function () {
         let operation = $(this).attr("data-operation");
         let newVal = eval(`${currentVal}${operation}1`)
         if (newVal < 1) {
-            newVal = 0;
+            newVal = 1;
         }
         $(".add-to-cart input").val(newVal);
     }
