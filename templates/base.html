@@ -38,7 +38,7 @@
                     <a aria-label="go to homepage" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}" alt="Logo"></a>
                 </li>
                 <li class="search">
-                    <form id="search" action="#">
+                    <form id="search" action="/categories/all/" method="GET">
                         <img src="{% static 'images/search.webp' %}" alt="Search icon">
                         <input type="search" aria-label="find products" name="search" id="search" autocomplete="off">
                     </form>
