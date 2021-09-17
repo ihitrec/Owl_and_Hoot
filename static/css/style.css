@@ -16,6 +16,11 @@
 
 /* START ---------------------------------------------------------------- Navigation */
 
+#skip-nav {
+    padding: 0;
+    border: 0;
+}
+
 nav {
     padding-top: 31px;
     overflow: hidden;

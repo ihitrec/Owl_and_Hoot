@@ -1,5 +1,6 @@
 /* Search by section:
    Nav menu
+   Skip nav
    Search
    Filtering
    Sorting
@@ -42,6 +43,15 @@ $(document).ready(function () {
         }, 500)
 
     }
+
+    /* Skip nav */
+
+    // Focus after nav, skip reading all content
+    $("#skip-nav").click(function () {
+        $("header").next().attr("tabindex", "0");
+        $("header").next().attr("aria-label", "skipped")
+        $("header").next().focus();
+    })
 
     /* Search */
 
