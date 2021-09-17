@@ -9,7 +9,8 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     sale_price = models.DecimalField(
         blank=True, null=True, max_digits=6, decimal_places=2)
-    brand = models.CharField(max_length=20)
+    brand = models.CharField(blank=True, max_length=20)
+    category = models.CharField(max_length=40)
     img = models.URLField()
     total_rating = models.DecimalField(
         default=0, max_digits=65, decimal_places=0)
