@@ -5,12 +5,18 @@ from django.db.models import Q
 
 
 def categories(request, category):
+    brand = []
     if category in ['all', 'puma', 'nike', 'adidas']:
         if 'search' in request.GET:
 
             # Add lowercase search words to query list
             search = request.GET['search']
             query = [x.lower() for x in search.split()]
+
+            # Set brand filter if brand in query
+            for word in query:
+                if word in ('nike', 'puma', 'adidas'):
+                    brand.append(word)
 
             # Filter products by gender if phrase or synonym in query
             if (not set(['male', 'men', 'boy', 'man']).isdisjoint(query)):
@@ -45,7 +51,8 @@ def categories(request, category):
         products = Product.objects.filter(gender='male')
     elif category == 'sale':
         products = Product.objects.exclude(sale_price__isnull=True)
-    return render(request, 'products/categories.html', {'products': products})
+    return render(request, 'products/categories.html', {
+        'products': products, 'brand': brand})
 
 
 def product(request, product):

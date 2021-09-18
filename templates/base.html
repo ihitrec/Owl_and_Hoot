@@ -41,7 +41,7 @@
                 <li class="search">
                     <form id="search" action="/categories/all/" method="GET">
                         <img src="{% static 'images/search.webp' %}" alt="Search icon">
-                        <input type="search" aria-label="find products" name="search" id="search" autocomplete="off">
+                        <input type="search" aria-label="find products" name="search" id="search" minlength="2" autocomplete="off">
                     </form>
                 </li>
                 <li id="initial" role="presentation">
@@ -109,7 +109,9 @@
     </footer>
 
     {% if messages %}
-    <div class="message-container"></div>
+    <div class="message-container">
+        dffaaf
+    </div>
     {% endif %}
 
     {% block postloadjs %}
