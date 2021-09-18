@@ -51,6 +51,10 @@ $(document).ready(function () {
         $("header").next().attr("tabindex", "0");
         $("header").next().attr("aria-label", "skipped")
         $("header").next().focus();
+        setTimeout(function () {
+            $("header").next().removeAttr("aria-label")
+            $("header").next().removeAttr("tabindex");
+        }, 2000)
     })
 
     /* Search */
