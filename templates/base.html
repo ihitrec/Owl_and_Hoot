@@ -65,6 +65,9 @@
                     <img src="{% static 'images/cart.webp' %}" alt="Cart icon">
                     <span>0</span>
                 </li>
+                <li id="cart">
+                    {% include "cart/cart.html" %}
+                </li>
                 <!-- Menu btn animated -->
                 <li class="menu-btn">
                     <button class="menu"
@@ -81,6 +84,7 @@
                 </li>
             </ul>
         </nav>
+        <div class="overlay"></div>
     </header>
     {% block content%}
 

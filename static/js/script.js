@@ -258,4 +258,14 @@ $(document).ready(function () {
         }
         $(".add-to-cart input").val(newVal);
     }
+
+    /* Cart */
+
+    $(".cart img, .overlay").click(showCart)
+    // Open/close cart and overlay
+    function showCart() {
+        $("#cart").toggleClass("opened-cart");
+        $(".cart").toggleClass("opened-cart-icon");
+        $(".overlay").toggleClass("opened-cart");
+    }
 });
