@@ -13,10 +13,11 @@ def categories(request, category):
             search = request.GET['search']
             query = [x.lower() for x in search.split()]
 
-            # Set brand filter if brand in query
+            # Set brand filter if brand in query, remove brands from query
             for word in query:
                 if word in ('nike', 'puma', 'adidas'):
                     brand.append(word)
+            query = list(set(query) - set(['nike', 'puma', 'adidas']))
 
             # Filter products by gender if phrase or synonym in query
             if (not set(['male', 'men', 'boy', 'man']).isdisjoint(query)):
