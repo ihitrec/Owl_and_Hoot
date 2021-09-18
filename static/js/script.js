@@ -5,6 +5,7 @@
    Filtering
    Sorting
    Product
+   Cart
 */
 
 $(document).ready(function () {
@@ -171,14 +172,7 @@ $(document).ready(function () {
                 }
             }
         }
-
-        if (!$(".product").is(":visible")) {
-            $(".no-products").css('display', 'block');
-            $(".sort-container").css('display', 'none');
-        } else {
-            $(".no-products").css('display', 'none');
-            $(".sort-container").css('display', 'block');
-        }
+        noProducts("filter")
     }
 
     // Turn on the filter when brand link is clicked
@@ -197,6 +191,23 @@ $(document).ready(function () {
         }
         filter()
     }
+
+    // Show reason when no products showing in categories
+    function noProducts(reason) {
+        if (reason === "search") {
+            $(".no-products").html("No products matching search query.")
+        } else {
+            $(".no-products").html("No products matching selected filter.")
+        }
+        if (!$(".product").is(":visible")) {
+            $(".no-products").css('display', 'block');
+            $(".sort-container").css('display', 'none');
+        } else {
+            $(".no-products").css('display', 'none');
+            $(".sort-container").css('display', 'block');
+        }
+    }
+    noProducts("search")
 
     /*  Sorting  */
 
@@ -262,6 +273,7 @@ $(document).ready(function () {
     /* Cart */
 
     $(".cart img, .overlay").click(showCart)
+
     // Open/close cart and overlay
     function showCart() {
         $("#cart").toggleClass("opened-cart");
