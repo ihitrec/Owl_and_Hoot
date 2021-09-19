@@ -279,5 +279,6 @@ $(document).ready(function () {
         $("#cart").toggleClass("opened-cart");
         $(".cart").toggleClass("opened-cart-icon");
         $(".overlay").toggleClass("opened-cart");
+        $(".cart img").toggleClass("cart-img");
     }
 });
