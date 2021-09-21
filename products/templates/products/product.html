@@ -13,7 +13,8 @@
         </div>
         <button>Add rating</button>
         <p>{{product.description}}</p>
-        <form action="#">
+        <form action="{% url 'add_to_cart' product_id=product.id %}" method="POST">
+            {% csrf_token %}
             <div class="sizes">
                 <label for="xs">XS
                     <input type="radio" id="xs" name="size" value="xs" required>
@@ -37,7 +38,7 @@
                     Add to cart
                 </button>
                 <span class="plus-minus" data-operation="+">&#43;</span>
-                <input type="number" min="1" max="99" name="num-of-products" id="num-of-products" value="1" required>
+                <input type="number" min="1" max="99" name="num-of-products" id="num-of-products" data-product="{{product.id}}" value="1" required>
                 <span class="plus-minus" data-operation="-">&#8722;</span>
             </div>
         </form>
