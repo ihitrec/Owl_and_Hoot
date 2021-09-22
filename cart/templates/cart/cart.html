@@ -10,7 +10,7 @@
         <div class="cart-product-detail">
             <h1 id="product-name">{{item.name}}</h1>
             <p>size <span>{{size}}</span></p>
-            <p>Qty: {{quantity}}</p>
+            <p data-quantity={{quantity}}>Qty: {{quantity}}</p>
             <p>€{{ prices|list_index:forloop.counter0 }}</p>
         </div>
     </div>
@@ -23,5 +23,5 @@
     <a href="#">Checkout</a>
 </div>
 {% else %}
-<p>Your cart is empty.</p>
+<p class="empty-cart">Your cart is empty.</p>
 {% endif %}
