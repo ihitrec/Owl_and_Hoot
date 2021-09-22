@@ -1,1 +1,25 @@
 <h1>Cart</h1>
+<div class="cart-products">
+    {% if cart_items %}
+    {% for item, value in cart_items.items %}
+    {% for size, quantity in value.items %}
+    <div class="cart-product">
+        <img src="{{item.img}}" alt="">
+        <div class="cart-product-detail">
+            <h1 id="product-name">{{item.name}}</h1>
+            <p>size <span>{{size}}</span></p>
+            <p>Qty: {{quantity}}</p>
+            <p>€</p>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+    {% endfor %}
+</div>
+<div class="cart-checkout">
+    <p>Total: €{{total}}</p>
+    <a href="#">Checkout</a>
+</div>
+{% else %}
+<p>Your cart is empty.</p>
+{% endif %}
