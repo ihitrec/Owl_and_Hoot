@@ -115,6 +115,7 @@ nav {
 }
 
 .cart span {
+    color: #545252;
     vertical-align: super;
     font-size: 17px;
 }
@@ -260,6 +261,9 @@ nav button {
     z-index: 5;
     position: fixed;
     top: 11%;
+    right: 10%;
+    display: flex !important;
+    justify-content: end;
 }
 
 .overlay {
@@ -285,13 +289,15 @@ nav button {
     padding-top: 5px;
     border-right: 2px solid #f8d878;
     border-left: 2px solid #f8d878;
+    margin-bottom: 5px;
 }
 
 .cart-img {
     border-left: 2px solid #f8d878;
     padding-left: 18px;
     width: 46px !important;
-    margin-left: -17px;
+    margin-top: 10px;
+    margin-right: 7px;
 }
 
 /* Cart items */
@@ -327,6 +333,7 @@ nav button {
     padding: 0;
     vertical-align: top;
     margin-top: 16px;
+    margin-right: 5px;
 }
 
 .cart-product-detail p {
@@ -368,6 +375,10 @@ nav button {
     margin-right: 13px;
     font-size: 20px;
     margin-top: 4px;
+}
+
+.empty-cart {
+    margin: 30px auto;
 }
 
 ::-webkit-scrollbar {
@@ -1018,6 +1029,25 @@ input::-webkit-inner-spin-button {
         border: none;
     }
 
+    /* Cart dropdown */
+    .cart-product img {
+        margin: 9px auto 2px;
+    }
+
+    .cart-product-detail {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cart-checkout p {
+        font-size: 14px !important;
+    }
+
+    .cart-checkout a {
+        font-size: 18px !important;
+        margin-top: 6px;
+    }
+
     /* Footer */
     footer {
         height: 171px !important;
@@ -1194,10 +1224,8 @@ input::-webkit-inner-spin-button {
     }
 
     .cart-img {
-        float: right;
         margin-top: 7px;
-        margin-right: 14px;
-        margin-left: -63px !important;
+        margin-right: 7px;
     }
 
     .opened-cart-icon {
@@ -1362,6 +1390,28 @@ input::-webkit-inner-spin-button {
         transform: scale(1.5);
         width: 66%;
         margin: 115px auto 200px;
+    }
+
+    /* Cart dropdown */
+    .cart {
+        top: 3.5%;
+        right: 7%;
+    }
+
+    .opened-cart-icon img {
+        width: 60px !important;
+    }
+
+    .opened-cart-icon p {
+        font-size: 1.2vw;
+    }
+
+    #cart {
+        transform: scale(1.5);
+    }
+
+    .cart-checkout a {
+        font-size: 20px !important;
     }
 
     /* Footer */
