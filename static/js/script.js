@@ -287,12 +287,4 @@ $(document).ready(function () {
         $(".overlay").toggleClass("opened-cart");
         $(".cart img").toggleClass("cart-img");
     }
-
-    // Update cart item num on change
-    let quantities = $("[data-quantity]")
-    let total = 0;
-    for (i = 0; i < quantities.length; i++) {
-        total += parseInt($(quantities[i]).attr("data-quantity"));
-    }
-    $(".cart span").html(total)
 });
