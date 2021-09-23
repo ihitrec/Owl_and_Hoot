@@ -58,6 +58,12 @@ $(document).ready(function () {
         }, 2000)
     })
 
+    /* Messages */
+
+    if ($(".message-container").length) {
+        $(".message-container").delay(1200).fadeOut(1000);
+    }
+
     /* Search */
 
     $(".search input").click(expandSearch);

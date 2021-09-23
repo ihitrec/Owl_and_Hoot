@@ -1,4 +1,5 @@
 from django.shortcuts import redirect
+from django.contrib import messages
 
 
 def add_to_cart(request, product_id):
@@ -15,6 +16,8 @@ def add_to_cart(request, product_id):
             cart[product_id][size] = quantity
     else:
         cart[product_id] = {size: quantity}
+
+    messages.success(request, 'Cart sucessfuly updated')
 
     request.session['cart'] = cart
     return redirect('product', product=product_id)

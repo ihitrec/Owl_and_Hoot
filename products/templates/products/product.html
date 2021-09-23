@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+
 <div class="product-container">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="message-container">
+        {{message}}
+    </div>
+    {% endfor %}
+    {% endif %}
     <section id="product-img">
         <img src="{{product.img}}" alt="">
     </section>
