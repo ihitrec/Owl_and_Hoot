@@ -263,7 +263,7 @@ $(document).ready(function () {
         $(this).parent().toggleClass("selected-size");
     });
 
-    // Increase or decrease product count on symbol click
+    // Increase or decrease product count on symbol click (1-99)
     $(".plus-minus").click(updateQuantity)
 
     function updateQuantity() {
@@ -272,6 +272,8 @@ $(document).ready(function () {
         let newVal = eval(`${currentVal}${operation}1`)
         if (newVal < 1) {
             newVal = 1;
+        } else if (newVal > 99) {
+            newVal = 99
         }
         $(".add-to-cart input").val(newVal);
     }
