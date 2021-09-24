@@ -310,6 +310,8 @@ $(document).ready(function () {
 
     // Reopen cart if updated
     if ($(".cart").attr("data-updated") === "True") {
-        showCart()
+        if ($(window).width() <= 1000)
+            toggleMenu();
+        showCart();
     }
 });
