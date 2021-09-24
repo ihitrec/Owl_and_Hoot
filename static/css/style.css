@@ -69,6 +69,7 @@ nav {
 
 #initial {
     display: initial;
+    margin-top: 20px;
 }
 
 .order {
@@ -356,6 +357,34 @@ nav button {
     font-size: 15px;
 }
 
+.cart-product-detail input {
+    border-width: 0;
+    text-align: center;
+    width: 23px;
+}
+
+#hidden-input {
+    display: none;
+}
+
+.cart-product-detail img {
+    width: 15px;
+    margin: 0;
+    border-radius: 0;
+    margin-left: -4px;
+}
+
+.cart-product-detail button {
+    background-color: transparent;
+    border: none;
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.hidden-btn {
+    display: none;
+}
+
 .cart-products hr {
     width: 95%;
     margin: 0 auto;
@@ -387,6 +416,7 @@ nav button {
 
 .empty-cart {
     margin: 30px auto;
+    text-align: center;
 }
 
 ::-webkit-scrollbar {

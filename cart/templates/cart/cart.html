@@ -1,4 +1,5 @@
 {% load list_index %}
+{% load static %}
 
 <h1>Cart</h1>
 <div class="cart-products">
@@ -8,10 +9,18 @@
     <div class="cart-product">
         <img src="{{item.img}}" alt="">
         <div class="cart-product-detail">
-            <h1 id="product-name">{{item.name}}</h1>
-            <p>size <span>{{size}}</span></p>
-            <p>Qty: {{quantity}}</p>
-            <p>€{{ prices|list_index:forloop.counter0 }}</p>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h1 id="product-name">{{item.name}}</h1>
+                <p>size <span>{{size}}</span></p>
+                <label for="quantity">Qty:</label>
+                <input type="number" name="quantity" id="quantity" min="1" max="99" value="{{quantity}}">
+                <img src="{% static 'images/update-qty.png' %}" alt="">
+                <p>€{{ prices|list_index:forloop.counter0 }}</p>
+                <input name="size" id="hidden-input" value="{{size}}" type="text">
+                <button class="hidden-btn" type="submit" name="cart-update" value="{{item.id}}">Update</button>
+                <button type="submit" name="cart-remove" value="{{item.id}}">Remove</button>
+            </form>
         </div>
     </div>
     <hr>

@@ -217,9 +217,9 @@ $(document).ready(function () {
 
     /*  Sorting  */
 
+    // Sort products by date or price
     $('#sort').on('change', sorted);
 
-    // Sort products by date or price
     function sorted() {
 
         let newOrder;
@@ -280,13 +280,31 @@ $(document).ready(function () {
 
     /* Cart */
 
+    // Open/close cart and overlay
     $(".cart img, .overlay").click(showCart)
 
-    // Open/close cart and overlay
     function showCart() {
         $("#cart").toggleClass("opened-cart");
         $(".cart").toggleClass("opened-cart-icon");
         $(".overlay").toggleClass("opened-cart");
         $(".cart img").toggleClass("cart-img");
+    }
+
+    // Focus product qty input after last character
+    $(".cart-product-detail img").click(dropdownQtyFocus);
+
+    function dropdownQtyFocus() {
+        let input = $(this).siblings("#quantity");
+        let value = input.val();
+        input.focus();
+        input.val('');
+        input.val(value);
+    }
+
+    // Show update btn on input focus
+    $(".cart-product-detail #quantity").focus(showUpdateBtn);
+
+    function showUpdateBtn() {
+        $(".cart-product-detail button").removeClass("hidden-btn");
     }
 });
