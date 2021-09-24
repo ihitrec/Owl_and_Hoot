@@ -307,4 +307,9 @@ $(document).ready(function () {
     function showUpdateBtn() {
         $(".cart-product-detail button").removeClass("hidden-btn");
     }
+
+    // Reopen cart if updated
+    if ($(".cart").attr("data-updated") === "True") {
+        showCart()
+    }
 });
