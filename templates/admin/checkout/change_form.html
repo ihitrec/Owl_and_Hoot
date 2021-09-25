@@ -1,0 +1,17 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_urls %}
+
+{% block extrahead %}{{ block.super }}
+<script src="{% url 'admin:jsi18n' %}"></script>
+{{ media }}
+<script>
+    // Change height and default format of json widget
+    window.addEventListener('DOMContentLoaded', (event) => {
+        document.getElementById("id_products").style.height = "fit-content";
+        document.querySelectorAll("button.jsoneditor-modes")[0].click();
+        setTimeout(function () {
+            document.getElementsByClassName("jsoneditor-type-modes")[3].click();
+        }, 10);
+    });
+</script>
+{% endblock %}
