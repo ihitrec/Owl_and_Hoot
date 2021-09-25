@@ -1,9 +1,8 @@
 {% extends "admin/change_form.html" %}
 {% load i18n admin_urls %}
 
-{% block extrahead %}{{ block.super }}
-<script src="{% url 'admin:jsi18n' %}"></script>
-{{ media }}
+{% block extrahead %}
+{{ block.super }}
 <script>
     // Change height and default format of json widget
     window.addEventListener('DOMContentLoaded', (event) => {
