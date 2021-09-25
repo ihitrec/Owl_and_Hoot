@@ -1,3 +1,69 @@
 {% extends "base.html" %}
+{% load static %}
+{% load list_index %}
+{% load add_class %}
 {% block content %}
+<div class="container checkout-cont">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="checkout-form">
+                <h1>Checkout</h1>
+                <form action="" method="post">
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            {{form.full_name|add_class:"form-control"}}
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            {{form.email|add_class:"form-control"}}
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            {{form.phone_number|add_class:"form-control"}}
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            {{form.country|add_class:"form-control"}}
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            {{form.postcode|add_class:"form-control"}}
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            {{form.city|add_class:"form-control"}}
+                        </div>
+                        <div class="mb-3 col-12">
+                            {{form.street_address1|add_class:"form-control"}}
+                        </div>
+                        <div class="mb-3 col-12">
+                            {{form.street_address2|add_class:"form-control"}}
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            {{form.county|add_class:"form-control"}}
+                        </div>
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-dark">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-6 cart-preview">
+            <h1>Cart preview <img src="{% static 'images/cart-edit.png' %}" alt=""></h1>
+            <div class="cart-products">
+                {% for item, value in cart_items.items %}
+                {% for size, quantity in value.items %}
+                <div class="cart-product">
+                    <img src="{{item.img}}" alt="">
+                    <div class="cart-product-detail">
+                        <h1 id="product-name">{{item.name}}</h1>
+                        <p>size <span>{{size}}</span></p>
+                        <label for="quantity">Qty: {{quantity}}</label>
+                        <p>€{{ prices|list_index:forloop.parentloop.counter0}}</p>
+                    </div>
+                </div>
+                <hr>
+                {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

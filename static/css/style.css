@@ -1,6 +1,7 @@
 /* Search by section:
     Navigation
     Cart dropdown
+    Checkout page
     Hero
     Collection
     Top brands
@@ -433,6 +434,66 @@ nav button {
 }
 
 /* Cart dropdown ---------------------------------------------------------------- END */
+
+/* START -------------------------------------------------------------- Checkout page */
+
+.checkout-cont .cart-products {
+    margin-bottom: 100px;
+}
+
+.cart-preview {
+    transform: scale(.95);
+}
+
+.checkout-form h1,
+.cart-preview h1 {
+    font-size: 25px;
+    margin-bottom: 11px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    margin-left: -12px;
+    color: #545252
+}
+
+.cart-preview h1 {
+    margin-left: 0;
+}
+
+.cart-preview>h1 {
+    margin-bottom: 0;
+    margin-left: 21px;
+    text-align: center;
+    font-size: 19px;
+    background-color: #eeeeee;
+    width: 89%;
+    margin: 0 auto 10px;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.cart-preview h1>img {
+    width: 20px;
+    float: right;
+    margin-right: 6px;
+    margin-left: -26px;
+    cursor: pointer;
+}
+
+.checkout-form button {
+    width: 100%;
+    background-color: #2e2e2e;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #2e2e2e33;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(46 46 46 / 10%);
+}
+
+
+/* Checkout page ----------------------------------------------------- ---------- END */
 
 /* START ----------------------------------------------------------------------- Hero */
 
