@@ -9,6 +9,7 @@
             <div class="checkout-form">
                 <h1>Checkout</h1>
                 <form action="" method="post">
+                    {% csrf_token %}
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             {{form.full_name|add_class:"form-control"}}
@@ -38,7 +39,7 @@
                             {{form.county|add_class:"form-control"}}
                         </div>
                         <div class="col-md-6">
-                            <button type="submit" class="btn btn-dark">Submit</button>
+                            <button name="total_cost" value="{{total}}" type="submit" class="btn btn-dark">Submit</button>
                         </div>
                     </div>
                 </form>

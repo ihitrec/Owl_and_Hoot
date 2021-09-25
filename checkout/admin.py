@@ -7,6 +7,7 @@ from django.db import models
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     search_fields = ('id',)
+    readonly_fields = ('total_cost',)
     formfield_overrides = {
         models.JSONField: {'widget': JSONEditorWidget},
     }
