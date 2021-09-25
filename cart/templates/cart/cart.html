@@ -16,7 +16,7 @@
                 <label for="quantity">Qty:</label>
                 <input type="number" name="quantity" id="quantity" min="1" max="99" value="{{quantity}}">
                 <img src="{% static 'images/update-qty.png' %}" alt="">
-                <p>€{{ prices|list_index:forloop.counter0 }}</p>
+                <p>€{{ prices|list_index:forloop.parentloop.counter0}}</p>
                 <input name="size" id="hidden-input" value="{{size}}" type="text">
                 <button class="hidden-btn" type="submit" name="cart-update" value="{{item.id}}">Update</button>
                 <button type="submit" name="cart-remove" value="{{item.id}}">Remove</button>
