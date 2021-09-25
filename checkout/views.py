@@ -1,15 +1,30 @@
 from django.shortcuts import render
+from django.conf import settings
+
 from .models import Order
 from products.models import Product
 from .forms import OrderForm
+from cart.contexts import cart_items
 
+import stripe
 
 def checkout(request):
-
     # Return to home if cart empty
     if 'cart-remove' in request.POST and len(request.session['cart']) == 1 or not request.session['cart']:
         return render(request, 'home/index.html')
-    
+
+ 
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
+
+    total = 10
+    stripe_total = round(total * 100)
+    stripe.api_key = stripe_secret_key
+    intent=stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
+
     if 'postcode' in request.POST:
         cart = request.session['cart']
         items={}
@@ -30,8 +45,8 @@ def checkout(request):
 
     context = {
         'form':OrderForm(),
-        'stripe_public_key': 'pk_test_51JddLyAj5ldMa6pFqrs5yfLT0Z15WENJT2DydLYwBWRCRkpcEmLhZdiy01pn1FSd6zpEU6WObWFuirXiAe3XvBJy00XE6tWNrN',
-        'client_secret':'test client secret'
+        'stripe_public_key': stripe_public_key,
+        'client_secret':intent.client_secret,
     }    
 
     return render(request, 'checkout/checkout.html', context)
