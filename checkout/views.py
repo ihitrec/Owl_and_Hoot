@@ -28,6 +28,10 @@ def checkout(request):
             total_cost=request.POST.get('total_cost')
             )
 
-    form = OrderForm()
+    context = {
+        'form':OrderForm(),
+        'stripe_public_key': 'pk_test_51JddLyAj5ldMa6pFqrs5yfLT0Z15WENJT2DydLYwBWRCRkpcEmLhZdiy01pn1FSd6zpEU6WObWFuirXiAe3XvBJy00XE6tWNrN',
+        'client_secret':'test client secret'
+    }    
 
-    return render(request, 'checkout/checkout.html', {'form':form})
+    return render(request, 'checkout/checkout.html', context)

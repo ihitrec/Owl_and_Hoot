@@ -373,6 +373,7 @@ nav button {
     margin: 0;
     border-radius: 0;
     margin-left: -4px;
+    cursor: pointer;
 }
 
 .cart-product-detail button {
@@ -437,8 +438,9 @@ nav button {
 
 /* START -------------------------------------------------------------- Checkout page */
 
-.checkout-cont .cart-products {
-    margin-bottom: 100px;
+
+.checkout-cont {
+    margin-bottom: 20px;
 }
 
 .cart-preview {
@@ -448,11 +450,18 @@ nav button {
 .checkout-form h1,
 .cart-preview h1 {
     font-size: 25px;
-    margin-bottom: 11px;
     font-family: 'Roboto';
     font-weight: 300;
-    margin-left: -12px;
-    color: #545252
+    color: #545252;
+    text-align: center;
+}
+
+.checkout-form h1 {
+    background-color: #eeeeee;
+    border-radius: 8px;
+    margin-top: 29px;
+    font-size: 22px;
+    padding: 3px;
 }
 
 .cart-preview h1 {
@@ -477,6 +486,23 @@ nav button {
     margin-right: 6px;
     margin-left: -26px;
     cursor: pointer;
+}
+
+.checkout-form legend {
+    font-size: 14px;
+    margin-left: -5px;
+    color: #545252
+}
+
+.checkout-total p {
+    width: fit-content;
+    margin-top: 10px;
+    background-color: #eeeeee;
+    padding: 6px;
+    border-radius: 5px;
+    margin-left: 13px;
+    border-left: 3px solid #f8d878;
+    border-right: 3px solid #f8d878;
 }
 
 .checkout-form button {
