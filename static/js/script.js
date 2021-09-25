@@ -308,10 +308,22 @@ $(document).ready(function () {
         $(".cart-product-detail button").removeClass("hidden-btn");
     }
 
-    // Reopen cart if updated
-    if ($(".cart").attr("data-updated") === "True") {
-        if ($(window).width() <= 1000)
+    // Reopen cart if updated, open menu on mobile
+    function mobileMenuToggle() {
+        if ($(window).width() <= 1000) {
             toggleMenu();
+        }
+    }
+    if ($(".cart").attr("data-updated") === "True") {
+        mobileMenuToggle();
         showCart();
     }
+
+    /* Checkout */
+
+    // Show cart on cart preview edit click, open menu on mobile
+    $(".cart-preview h1>img").click(function () {
+        mobileMenuToggle();
+        showCart();
+    });
 });
