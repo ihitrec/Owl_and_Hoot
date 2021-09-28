@@ -32,6 +32,8 @@ form.addEventListener('submit', function (ev) {
         'disabled': true
     });
     $('#submit-button').attr('disabled', true);
+    $("#checkout-form").fadeToggle(100);
+    $("#checkout-loading").fadeToggle(100);
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
@@ -45,6 +47,8 @@ form.addEventListener('submit', function (ev) {
                 </span>
                 <span>${result.error.message}</span>`;
             $(errorDiv).html(html);
+            $("#checkout-form").fadeToggle(100);
+            $("#checkout-loading").fadeToggle(100);
             card.update({
                 'disabled': false
             });

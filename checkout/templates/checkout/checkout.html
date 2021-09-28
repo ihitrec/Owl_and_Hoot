@@ -2,8 +2,16 @@
 {% load static %}
 {% load list_index %}
 {% load add_class %}
+{% block extrajs %}
+<script src="https://kit.fontawesome.com/69b2179d00.js" crossorigin="anonymous"></script>
+{% endblock %}
 {% block content %}
 <div class="container checkout-cont">
+    <div id="checkout-loading">
+        <h1 class="text-light logo-font loading-spinner">
+            <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+        </h1>
+    </div>
     <div class="row">
         <div class="col-lg-6">
             <div class="checkout-form">
