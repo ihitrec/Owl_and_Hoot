@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Order successfully processed!</h1>
+<p>Your order number is {{order.pk}}. A confirmation will be sent to {{order.email}} shortly.</p>
+
+{% endblock %}

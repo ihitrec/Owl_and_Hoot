@@ -1,6 +1,7 @@
 # pylint: disable=no-member
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.conf import settings
+from django.contrib import messages
 
 from .models import Order
 from products.models import Product
@@ -42,7 +43,7 @@ def checkout(request):
             items = {}
             for product_id in list(cart.keys()):
                 items[Product.objects.get(id=product_id).name] = cart[product_id]
-            Order.objects.create(
+            saved_order = Order.objects.create(
                 products=items,
                 full_name=request.POST.get('full_name'),
                 email=request.POST.get('email'),
@@ -54,7 +55,9 @@ def checkout(request):
                 street_address2=request.POST.get('street_address2'),
                 total_cost=details.total
             )
-            return redirect('home')
+            return redirect(reverse('checkout_success', args=[saved_order.pk]))
+        else:
+            messages.error(request, 'There was an error with your form.')
     else:
         order_form = OrderForm()
         total = details.total
@@ -72,3 +75,17 @@ def checkout(request):
     }
 
     return render(request, 'checkout/checkout.html', context)
+
+
+def checkout_success(request, order_number):
+    order = Order.objects.get(id=order_number)
+
+    if 'cart' in request.session:
+        request.session['cart'] = {}
+
+    template = 'checkout/checkout_success.html'
+    context = {
+        'order': order
+    }
+
+    return render(request, template, context)
