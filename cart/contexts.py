@@ -8,7 +8,8 @@ def product_update(request):
     """
     Update product qty or remove it.
 
-    If function called from checkout view, changes global updated variable to prevent double call
+    If function called from checkout view,
+    changes global updated variable to prevent double call
     """
 
     cart = request.session['cart']
@@ -16,7 +17,8 @@ def product_update(request):
     if request.method == "POST":
         if request.session.get('cart'):
             if 'cart-update' in request.POST:
-                cart[request.POST.get('cart-update')][request.POST.get('size')] = int(request.POST.get('quantity'))
+                cart[request.POST.get('cart-update')][request.POST.get(
+                    'size')] = int(request.POST.get('quantity'))
                 request.session.modified = True
                 updated = True
             elif 'cart-remove' in request.POST:
@@ -35,7 +37,7 @@ def details(request):
     """
     Get products, individual prices, total cart price and quantity.
 
-    Set values as details keys so total can be accessed from the checkout view 
+    Set values as details keys so total can be accessed from the checkout view
     """
 
     cart = request.session.get('cart', {})
@@ -61,7 +63,7 @@ def cart_items(request):
     """Add cart items and details to context"""
 
     global updated
-    if updated == False:
+    if updated is False:
         product_update(request)
 
     details(request)

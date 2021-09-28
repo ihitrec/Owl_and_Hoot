@@ -139,7 +139,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Dublin'
 
 USE_I18N = True
 
@@ -159,7 +159,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#Stripe
+# Stripe
 STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')

@@ -1,3 +1,4 @@
+# pylint: disable=no-member
 from django.shortcuts import render, redirect
 from django.conf import settings
 
@@ -34,7 +35,7 @@ def checkout(request):
         items = {}
         for product_id in list(cart.keys()):
             items[Product.objects.get(id=product_id).name] = cart[product_id]
-        order = Order.objects.create(
+        Order.objects.create(
             products=items,
             full_name=request.POST.get('full_name'),
             email=request.POST.get('email'),
@@ -51,6 +52,6 @@ def checkout(request):
         'form': OrderForm(),
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
-    }    
+    }
 
     return render(request, 'checkout/checkout.html', context)
