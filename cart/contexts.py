@@ -20,12 +20,15 @@ def product_update(request):
                 request.session.modified = True
                 updated = True
             elif 'cart-remove' in request.POST:
-                product = cart[request.POST.get('cart-remove')]
-                del product[request.POST.get('size')]
-                if not product:
-                    del cart[request.POST.get('cart-remove')]
-                request.session.modified = True
-                updated = True
+                try:
+                    product = cart[request.POST.get('cart-remove')]
+                    del product[request.POST.get('size')]
+                    if not product:
+                        del cart[request.POST.get('cart-remove')]
+                    request.session.modified = True
+                    updated = True
+                except KeyError:
+                    pass
 
 
 def details(request):
