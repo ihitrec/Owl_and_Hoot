@@ -8,7 +8,7 @@
         <div class="col-lg-6">
             <div class="checkout-form">
                 <h1>Checkout</h1>
-                <form action="" method="post">
+                <form action="" method="post" id="checkout-form">
                     {% csrf_token %}
                     <div class="row">
                         <fieldset class="col-12">
@@ -93,7 +93,7 @@
 
 {% block postloadjs %}
 {{ block.super}}
-{{ stripe_public_key|json_script:"id_stripe_public_key"}}
-{{ stripe_public_key|json_script:"id_stripe_client_secret"}}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
 <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}

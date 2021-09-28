@@ -85,7 +85,6 @@ def cart_items(request):
 
     details(request)
 
-    print(message)
     context = {
         'cart_items': details.cart_items,
         'prices': details.prices,
