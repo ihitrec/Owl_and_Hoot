@@ -75,7 +75,7 @@
                         <h1 id="product-name">{{item.name}}</h1>
                         <p>size <span>{{size}}</span></p>
                         <label for="quantity">Qty: {{quantity}}</label>
-                        <p>€{{ prices|list_index:forloop.parentloop.counter0}}</p>
+                        <p>€{{ prices|list_index}}</p>
                     </div>
                 </div>
                 <hr>
