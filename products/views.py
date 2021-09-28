@@ -1,5 +1,5 @@
 # pylint: disable=no-member
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Product
 from django.db.models import Q
 
@@ -57,5 +57,8 @@ def categories(request, category):
 
 
 def product(request, product):
-    product = Product.objects.get(id=product)
-    return render(request, 'products/product.html', {'product': product})
+    try:
+        product = Product.objects.get(id=product)
+        return render(request, 'products/product.html', {'product': product})
+    except Product.DoesNotExist:
+        return redirect('home')

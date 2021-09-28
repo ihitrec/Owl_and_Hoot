@@ -32,6 +32,11 @@
 </head>
 
 <body>
+    {% if message %}
+    <div class="warning-message">
+        {{message}}
+    </div>
+    {% endif %}
     <button id="skip-nav" tabindex="0" aria-label="skip navigation links"></button>
     <!-- Nav -->
     <header>
@@ -88,7 +93,7 @@
         </nav>
         <div class="overlay"></div>
     </header>
-    {% block content%}
+    {% block content %}
 
     {% endblock %}
 
