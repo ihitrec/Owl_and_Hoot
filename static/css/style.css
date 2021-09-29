@@ -527,7 +527,8 @@ nav button {
     background-color: #2e2e2e;
 }
 
-.form-control:focus {
+.form-control:focus,
+.form-check-input:focus {
     color: #212529;
     background-color: #fff;
     border-color: #2e2e2e33;
@@ -535,6 +536,19 @@ nav button {
     box-shadow: 0 0 0 0.25rem rgb(46 46 46 / 10%);
 }
 
+.form-check-input:checked {
+    border: none;
+}
+
+select,
+select option {
+    color: black;
+}
+
+select:invalid,
+select option[value=""] {
+    color: gray !important;
+}
 
 /* Checkout page ---------------------------------------------------------------- END */
 

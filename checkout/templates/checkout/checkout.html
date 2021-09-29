@@ -37,16 +37,17 @@
                             <div class="row">
                                 <legend class="col-12">Delivery</legend>
                                 <div class="mb-3 col-md-6">
+                                    {{form.city|add_class:"form-control"}}
+
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    {{form.county|add_class:"form-control"}}
+                                </div>
+                                <div class="mb-3 col-md-6">
                                     {{form.country|add_class:"form-control"}}
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     {{form.postcode|add_class:"form-control"}}
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    {{form.city|add_class:"form-control"}}
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    {{form.county|add_class:"form-control"}}
                                 </div>
                                 <div class="mb-3 col-12">
                                     {{form.street_address1|add_class:"form-control"}}
