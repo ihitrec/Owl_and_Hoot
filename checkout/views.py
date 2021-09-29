@@ -73,7 +73,8 @@ def checkout(request):
                 city=request.POST.get('city'),
                 street_address1=request.POST.get('street_address1'),
                 street_address2=request.POST.get('street_address2'),
-                total_cost=details.total
+                total_cost=details.total,
+                stripe_pid=request.POST.get('client_secret').split('_secret')[0]
             )
             return redirect(reverse('checkout_success', args=[saved_order.pk]))
         else:

@@ -518,6 +518,10 @@ nav button {
     border-right: 3px solid #f8d878;
 }
 
+.info-save {
+    text-align: right;
+}
+
 .checkout-form button {
     width: 100%;
     background-color: #2e2e2e;
@@ -1218,6 +1222,12 @@ input::-webkit-inner-spin-button {
     .cart-checkout a {
         font-size: 18px !important;
         margin-top: 6px;
+    }
+
+    /* Checkout */
+
+    .info-save {
+        font-size: 12px;
     }
 
     /* Footer */
