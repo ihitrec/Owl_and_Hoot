@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'cart',
     'checkout',
     'django_json_widget',
+    'profiles',
 ]
 
 MIDDLEWARE = [
