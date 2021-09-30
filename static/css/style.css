@@ -778,8 +778,7 @@ select option[value=""] {
     color: #e2b52e;
 }
 
-.forgot-password:hover,
-.signup-first:hover {
+.forgot-password:hover {
     color: #e2b52e;
 }
 
