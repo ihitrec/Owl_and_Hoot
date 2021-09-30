@@ -2,19 +2,21 @@
 
 {% load i18n %}
 {% load account socialaccount %}
+{% load add_class %}
+
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
-{% block content %}
+{% block inner_content %}
 
-<h1>{% trans "Sign In" %}</h1>
+<h2>{% trans "Sign in" %}</h2>
 
 {% get_providers as socialaccount_providers %}
 
 {% if socialaccount_providers %}
 <p>{% blocktrans with site.name as site_name %}Please sign in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+  of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+  for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 <div class="socialaccount_ballot">
 
@@ -30,17 +32,31 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 {% else %}
 <p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+  <a class="signup-first" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
-<form class="login" method="POST" action="{% url 'account_login' %}">
+<form id="login-form" class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
-  {{ form.as_p }}
+  <div class="row">
+    <div class="mb-3 col-12">
+      <label for="id_login">Login:</label>
+      {{ form.login|add_class:"form-control" }}
+    </div>
+    <div class="mb-3 col-12">
+      <label for="id_password">Password:</label>
+      {{ form.password|add_class:"form-control" }}
+    </div>
+
+    <div class="mb-3 col-12">
+      <label for="id_remember">Remember Me:</label>
+      {{ form.remember|add_class:"form-check-input" }}
+    </div>
+  </div>
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+  <button class="primaryAction btn btn-dark" type="submit">{% trans "Sign In" %}</button>
+  <a class="button secondaryAction forgot-password" href="{% url 'account_reset_password' %}">{% trans "Forgot Password ?" %}</a>
 </form>
 
 {% endblock %}

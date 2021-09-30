@@ -12,8 +12,9 @@ def product_update(request):
     If function called from checkout view,
     changes global updated variable to prevent double call
     """
+
     try:
-        cart = request.session['cart']
+        cart = request.session.get('cart', {})
         global updated
         if request.method == "POST":
             if request.session.get('cart'):

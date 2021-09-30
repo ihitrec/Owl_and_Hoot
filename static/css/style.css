@@ -754,6 +754,38 @@ select option[value=""] {
 
 /* Top brands ------------------------------------------------------------------- END */
 
+/* START ----------------------------------------------------------------- Auth pages */
+
+#auth-container {
+    margin: 0 auto;
+    max-width: 400px;
+    margin-bottom: 60px;
+    padding: 0 10px;
+}
+
+#login-form {
+    width: auto;
+}
+
+.forgot-password {
+    margin-left: 15px;
+    font-size: 14px !important;
+    text-decoration: none;
+    color: black;
+}
+
+.signup-first {
+    color: #e2b52e;
+}
+
+.forgot-password:hover,
+.signup-first:hover {
+    color: #e2b52e;
+}
+
+/* Auth pages ------------------------------------------------------------------- END */
+
+
 /* START --------------------------------------------------------------------- Footer */
 
 footer {
