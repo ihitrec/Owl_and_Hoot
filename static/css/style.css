@@ -774,11 +774,12 @@ select option[value=""] {
     color: black;
 }
 
-.signup-first {
+h2+p>a {
     color: #e2b52e;
 }
 
-.forgot-password:hover {
+.forgot-password:hover,
+h2+p>a:hover {
     color: #e2b52e;
 }
 
