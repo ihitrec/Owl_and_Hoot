@@ -552,6 +552,10 @@ select option[value=""] {
     color: gray !important;
 }
 
+.checkout-confirmation .row {
+    justify-content: center;
+}
+
 /* Checkout page ---------------------------------------------------------------- END */
 
 /* START ----------------------------------------------------------- Checkout success */
