@@ -11,3 +11,4 @@ class OrderAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.JSONField: {'widget': JSONEditorWidget},
     }
+    ordering = ('-date',)

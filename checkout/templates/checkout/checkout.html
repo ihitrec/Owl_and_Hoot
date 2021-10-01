@@ -55,7 +55,7 @@
                                 <div class="mb-3 col-12">
                                     {{form.street_address2|add_class:"form-control"}}
                                 </div>
-                                {% if not request.user.is_authenticated %}
+                                {% if request.user.is_authenticated %}
                                 <div class="mb-3 col-12 info-save">
                                     <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
                                     <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>

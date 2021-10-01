@@ -7,6 +7,8 @@ from django.contrib import messages
 from .models import Order
 from products.models import Product
 from .forms import OrderForm
+from profiles.models import UserProfile
+from profiles.forms import UserForm
 from cart.contexts import product_update, details
 
 import stripe
@@ -20,7 +22,7 @@ def cache_checkout_data(request):
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
             'cart': json.dumps(request.session.get('cart', {})),
-            'save_info': request.POST.get('save_info'),
+            'save_info': request.POST.get('save-info'),
             'username': request.user,
         })
         return HttpResponse(status=200)
@@ -74,8 +76,11 @@ def checkout(request):
                 street_address1=request.POST.get('street_address1'),
                 street_address2=request.POST.get('street_address2'),
                 total_cost=details.total,
-                stripe_pid=request.POST.get('client_secret').split('_secret')[0]
+                stripe_pid=request.POST.get('client_secret').split(
+                    '_secret')[0]
             )
+
+            request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[saved_order.pk]))
         else:
             messages.error(request, 'There was an error with your form.')
@@ -89,6 +94,23 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'full_name': profile.user.get_full_name(),
+                    'email': profile.user.email,
+                    'phone_number': profile.default_phone_number,
+                    'country': profile.default_country,
+                    'postcode': profile.default_postcode,
+                    'city': profile.default_city,
+                    'street_address1': profile.default_street_address1,
+                    'street_address2': profile.default_street_address2,
+                    'county': profile.default_county,
+                })
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+
     context = {
         'form': order_form,
         'stripe_public_key': stripe_public_key,
@@ -99,7 +121,32 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
+    """
+    Handle successful checkouts
+    """
+
     order = Order.objects.get(id=order_number)
+    save_info = request.session.get('save_info')
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        order.user_profile = profile
+        order.save()
+
+    if save_info:
+        profile_data = {
+            'default_phone_number': order.phone_number,
+            'default_country': order.country,
+            'default_postcode': order.postcode,
+            'default_city': order.city,
+            'default_street_address1': order.street_address1,
+            'default_street_address2': order.street_address2,
+            'default_county': order.county,
+        }
+
+        user_profile_form = UserForm(profile_data, instance=profile)
+        if user_profile_form.is_valid():
+            user_profile_form.save()
 
     if 'cart' in request.session:
         request.session['cart'] = {}
