@@ -3,7 +3,13 @@
 {% load add_class %}
 
 {% block content %}
-
+{% if messages %}
+{% for message in messages %}
+<div class="message-container">
+    {{message}}
+</div>
+{% endfor %}
+{% endif %}
 <div class="row profile-row">
     <h2>Profile</h2>
     <hr>
