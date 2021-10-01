@@ -1,8 +1,11 @@
 # pylint: disable=no-member
 from django.http import HttpResponse
 from .models import Order
+from profiles.models import UserProfile
+from products.models import Product
 
 import time
+import ast
 
 
 class StripeWH_Handler:
@@ -16,7 +19,7 @@ class StripeWH_Handler:
         Handle a generic/unknown/unexpected webhook event
         """
         return HttpResponse(
-            content=f'Webhook received: {event["type"]}',
+            content=f'Unhandled webhook received: {event["type"]}',
             status=200)
 
     def handle_payment_intent_succeeded(self, event):
@@ -25,16 +28,40 @@ class StripeWH_Handler:
         """
         intent = event.data.object
         pid = intent.id
+
         cart = intent.metadata.cart
+        cart = ast.literal_eval(cart)
+        items = {}
+        for product_id in list(cart.keys()):
+            items[Product.objects.get(
+                id=product_id).name] = cart[product_id]
+        cart = items
+
         save_info = intent.metadata.save_info
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
         total_cost = round(intent.charges.data[0].amount / 100, 2)
-
         # Clean data in the shipping details
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
+
+        # Update profile information if save_info was checked
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            if save_info:
+                profile.default_phone_number = shipping_details.phone
+                profile.default_country = shipping_details.address.country
+                profile.default_postcode = shipping_details.address.postal_code
+                profile.default_city = shipping_details.address.city
+                profile.default_street_address1 = (
+                    shipping_details.address.line1)
+                profile.default_street_address2 = (
+                    shipping_details.address.line2)
+                profile.default_county = shipping_details.address.state
+                profile.save()
 
         order_exists = False
         attempt = 1
@@ -70,6 +97,7 @@ class StripeWH_Handler:
                 order = Order.objects.create(
                     products=cart,
                     full_name=shipping_details.name,
+                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
                     country=shipping_details.address.country,
