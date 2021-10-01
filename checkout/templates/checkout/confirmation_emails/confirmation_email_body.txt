@@ -1,0 +1,21 @@
+Hello {{ order.full_name }}!
+
+This is a confirmation of your order at Owl & Hoot. Your order information is below:
+
+Order Number: {{ order.pk }}
+Order Date: {{ order.date }}
+
+Order Total: €{{ order.total_cost }}
+
+
+Your order will be shipped to {{ order.street_address1 }} in {{ order.city }}, {{ order.country }}.
+
+We've got your phone number on file as {{ order.phone_number }}.
+
+If you have any questions, feel free to contact us at {{ contact_email|safe }}.
+
+Thank you for your order!
+
+Sincerely,
+
+Owl & Hoot
