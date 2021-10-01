@@ -326,4 +326,15 @@ $(document).ready(function () {
         mobileMenuToggle();
         showCart();
     });
+
+    /* Profile */
+
+    // Change country field color with required, remove required before submission
+    if ($('.profile-form').length > 0) {
+        $(".profile-form select").first().prop('required', true);
+        $('.profile-form button').click(function () {
+            $(".profile-form select").first().prop('required', false);
+        });
+    }
+
 });

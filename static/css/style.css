@@ -6,7 +6,9 @@
     Hero
     Collection
     Top brands
+    Auth pages
     Product page
+    Profile page
     Footer
     Media query
 */
@@ -1175,6 +1177,32 @@ input::-webkit-inner-spin-button {
 }
 
 /* Product page ----------------------------------------------------------------- END */
+
+/* START --------------------------------------------------------------- Profile page */
+
+.profile-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 8px;
+}
+
+.profile-row {
+    max-width: 1200px;
+    margin: 10px auto 53px;
+}
+
+.profile-row h2 {
+    margin-left: 5%;
+    font-family: 'Roboto';
+}
+
+.profile-row hr {
+    width: 90%;
+    height: 2px;
+    margin: 12px auto 15px;
+}
+
+/* Profile page ----------------------------------------------------------------- END */
 
 /* START ---------------------------------------------------------------- Media query */
 
