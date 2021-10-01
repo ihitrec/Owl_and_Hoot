@@ -1206,6 +1206,11 @@ input::-webkit-inner-spin-button {
     margin: 12px auto 15px;
 }
 
+.order-history {
+    max-height: 456px;
+    overflow-y: auto;
+}
+
 /* Profile page ----------------------------------------------------------------- END */
 
 /* START ---------------------------------------------------------------- Media query */
