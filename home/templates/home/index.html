@@ -2,6 +2,13 @@
 {% load static %}
 {% block content %}
 <!-- Hero -->
+{% if messages %}
+{% for message in messages %}
+<div class="message-container">
+    {{message}}
+</div>
+{% endfor %}
+{% endif %}
 <section class="hero">
     <div class="offer">
         <h1 id="sale">Summer sale</h1>

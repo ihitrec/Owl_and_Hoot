@@ -92,7 +92,7 @@ def cart_items(request):
         'total': details.total,
         'quantity': details.quantity,
         'updated': updated,
-        'message': message
+        'messagew': message
     }
 
     updated = False
