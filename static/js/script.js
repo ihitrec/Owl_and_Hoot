@@ -337,4 +337,17 @@ $(document).ready(function () {
         });
     }
 
+    /* Delete product alert */
+
+    $(".product-alert").click(openAlert)
+    // Toggle alert on delete click
+    function openAlert() {
+        $(this).parent().siblings(".alert").toggleClass("edit-alert");
+    }
+
+    $(".alert .btn-close").click(closeAlert)
+    // Hide alert on close click
+    function closeAlert() {
+        $(this).parent().toggleClass("edit-alert");
+    }
 });

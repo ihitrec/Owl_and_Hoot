@@ -21,7 +21,7 @@
 /* Roboto font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/* Messages */
+/* Messages/alerts */
 .message-container {
     text-align: center;
     background-color: #ebdba0;
@@ -39,6 +39,21 @@
     border-radius: 4px;
     transform: translateY(12px);
     padding: 0 25px;
+}
+
+.alert-dismissible {
+    margin-top: -40px;
+}
+
+.edit-alert {
+    display: none !important;
+}
+
+.product-desc .product-alert {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    padding: 5px 8px;
 }
 
 /* START ---------------------------------------------------------------- Navigation */
@@ -1049,8 +1064,10 @@ input[type=checkbox]:checked {
     opacity: 1;
 }
 
-.product-edit a {
+.product-edit a,
+.product-edit button {
     color: white;
+    vertical-align: top;
 }
 
 /* Category page ---------------------------------------------------------------- END */
