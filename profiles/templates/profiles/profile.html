@@ -10,11 +10,28 @@
 </div>
 {% endfor %}
 {% endif %}
-<div class="row profile-row">
-    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-    <h2>Profile</h2>
-    <hr>
-    <div class="col-12 col-lg-6">
+<div class="row profile-row text-center">
+    <div class="col-12">
+        <div class="row prof-headin-row">
+            <div class="col-12 col-md-7 text-md-left">
+                <h2>Profile</h2>
+            </div>
+            <div class="col-12 col-md-3">
+                {% if request.user.is_superuser %}
+                <a class="btn btn-sm btn-warning" href="{% url 'add_product' %}">Product management
+                    <img src="{% static 'images/management.png' %}" alt="">
+                </a>
+                {% endif %}
+            </div>
+            <div class="col-12 mt-3 col-md-2 mt-md-0 ">
+                <a href="{% url 'account_logout' %}">Logout
+                    <img src="{% static 'images/logout.png' %}" alt="">
+                </a>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="col-12 col-lg-6 mb-5">
         <form class="profile-form" method="POST" action="">
             {% csrf_token %}
             <p class="text-muted">Default Delivery Information</p>
@@ -26,7 +43,7 @@
             <button class="primaryAction btn btn-dark" type="submit">Update</button>
         </form>
     </div>
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-lg-6 order-his-container">
         <p class="text-muted">Order History</p>
         {% if orders %}
         <div class="order-history table-responsive">

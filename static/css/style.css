@@ -1205,10 +1205,30 @@ input::-webkit-inner-spin-button {
 .profile-row {
     max-width: 1200px;
     margin: 10px auto 53px;
+    justify-content: center;
+}
+
+.profile-row img {
+    width: 23px;
+}
+
+.prof-headin-row a {
+    text-decoration: none;
+    color: black;
+    vertical-align: sub;
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
+.prof-headin-row .btn-warning {
+    opacity: .75;
+}
+
+.prof-headin-row .btn-warning:hover {
+    opacity: .9;
 }
 
 .profile-row h2 {
-    margin-left: 5%;
     font-family: 'Roboto';
 }
 
@@ -1216,6 +1236,10 @@ input::-webkit-inner-spin-button {
     width: 90%;
     height: 2px;
     margin: 12px auto 15px;
+}
+
+.order-his-container {
+    width: fit-content;
 }
 
 .order-history {
@@ -1323,6 +1347,15 @@ input::-webkit-inner-spin-button {
 
     .info-save {
         font-size: 12px;
+    }
+
+    /* Profile */
+    .order-history {
+        font-size: 12px;
+    }
+
+    .prof-headin-row {
+        font-size: 13px;
     }
 
     /* Footer */
