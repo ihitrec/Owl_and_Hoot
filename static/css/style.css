@@ -1255,7 +1255,6 @@ input::-webkit-inner-spin-button {
 }
 
 .profile-row hr {
-    width: 90%;
     height: 2px;
     margin: 12px auto 15px;
 }
