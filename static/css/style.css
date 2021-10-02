@@ -9,6 +9,7 @@
     Auth pages
     Product page
     Profile page
+    Product management
     Footer
     Media query
 */
@@ -791,6 +792,17 @@ h2+p>a:hover {
 
 /* Auth pages ------------------------------------------------------------------- END */
 
+/* START --------------------------------------------------------- Product management */
+
+.add-product-container .row {
+    justify-content: center;
+}
+
+.add-product-form textarea {
+    height: 38px;
+}
+
+/* Product management ----------------------------------------------------------- END */
 
 /* START --------------------------------------------------------------------- Footer */
 
