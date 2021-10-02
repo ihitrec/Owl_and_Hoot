@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="message-container">
+    {{message}}
+</div>
+{% endfor %}
+{% endif %}
 <div class="category">
     <section class="filter">
         <h1 tabindex="0">Filter</h1>
@@ -80,6 +87,13 @@
                     <p>{{product.name}}</p>
                     <p>€{{product.price|floatformat}}</p>
                 </div>
+                {% if request.user.is_superuser %}
+                <div class="product-edit mt-1">
+                    <a class="btn btn-sm btn-secondary" href="{% url 'edit_product' product.id %}">Edit</a>
+                    <a class="btn btn-sm btn-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                </div>
+                {% endif %}
+
                 <div class="rating" {% if product.rating > 0 %} aria-label="rated {{product.rating}}" {% endif %}>
                     {{product.rating}}
                 </div>

@@ -50,6 +50,12 @@
                 <span class="plus-minus" data-operation="-">&#8722;</span>
             </div>
         </form>
+        {% if request.user.is_superuser %}
+        <div class="text-center mt-3">
+            <a class="btn btn-sm btn-secondary" href="{% url 'edit_product' product.id %}">Edit</a>
+            <a class="btn btn-sm btn-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+        </div>
+        {% endif %}
     </section>
 </div>
 {% endblock %}

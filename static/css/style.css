@@ -11,6 +11,7 @@
     Profile page
     Product management
     Footer
+    Category page
     Media query
 */
 
@@ -877,7 +878,7 @@ footer label {
 
 /* Footer ----------------------------------------------------------------------- END */
 
-/* START ------------------------------------------------------------------- Category */
+/* START -------------------------------------------------------------- Category page */
 
 .category {
     display: flex;
@@ -1048,7 +1049,11 @@ input[type=checkbox]:checked {
     opacity: 1;
 }
 
-/* Category --------------------------------------------------------------------- END */
+.product-edit a {
+    color: white;
+}
+
+/* Category page ---------------------------------------------------------------- END */
 
 /* START --------------------------------------------------------------- Product page */
 

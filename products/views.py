@@ -99,9 +99,9 @@ def edit_product(request, product_id):
     """ Edit a product in the store """
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES, instance=product)
+        form = ProductForm(request.POST, instance=product)
         if form.is_valid():
-            form.save()
+            product = form.save()
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product', args=[product.id]))
         else:
@@ -117,3 +117,11 @@ def edit_product(request, product_id):
     }
 
     return render(request, 'products/edit_product.html', context)
+
+
+def delete_product(request, product_id):
+    """ Delete a product from the store """
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product deleted!')
+    return redirect(reverse('categories', args=['all']))
