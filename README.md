@@ -72,6 +72,55 @@ The fourth and final project in Code Institute Full Stack Developer program feat
 
 ## Deployment
 
+### Heroku
+1. Create a new app on the Heroku website and choose the region in which most of your users reside.
+
+2. Select the Add-ons window and add Heroku Postgres. To use Heroku Postgress make sure to `pip3 install dj_database_url` and `pip3 install psycopg2.binary` from your project terminal (don't forget to update the requirements file).
+
+3. Go to the Heroku settings tab and copy your database URL from Config Vars section. Make it the default database in your project Django settings with `'default': dj_database_url.parse(your_url)`  
+Make migrations and migrate. If you get the `django.db.utils.OperationalError: FATAL:  role "some_role"  does not exist`, you can fix it by using `unset PGHOSTADDR` command.  
+Before pushing to GitHub make sure to change the default database to `'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))` as not to expose it.
+
+4. Install gunicorn web server `pip3 install gunicorn`  
+Create Procfile and add `web: gunicorn your_project.wsgi:application`
+
+5. Log in to Heroku from the terminal `heroku login`. If error forbidden shows up, use `heroku login -i` instead.  
+Temporarily disable Heroku's static file collection with `heroku config:set DISABLE_COLLECTSTATIC=1 --app your_heroku_app_name`
+Add hostname of your Heroku app in settings: `ALLOWED_HOSTS = ['your_app_name.herokuapp.com', 'localhost']`
+
+6. If app created trough the website initialise git remote: `heroku git:remote -a owl-and-hoot`  
+Push your changes to Github and then to Heroku: `git push heroku master` (could be main instead of master depending on your branch). 
+
+### AWS
+
+1. Create and verify an AWS account. After logging in search for S3 scalable storage and create a bucket selecting the apropriate region again. Make sure to unblock all public access and tick the confirmation box at the bottom.
+
+2. After creation is confirmed select the created bucket to customize settings. Go to the bottom of the properties to Static website hosting. Enable it and under Hosting type select host a static website. Fill the index and error document sections with placeholders as it will not be needed.
+
+3. Go to the permissions tab CORS section and paste the following configuration `[{"AllowedHeaders": ["Authorization"], "AllowedMethods": ["GET"], "AllowedOrigins": ["*"], "ExposeHeaders": []}]`
+
+4. In the same tab, select Bucket policy section and then Policy generator. Set policy type as S3 Bucket Policy. Allow all Principals by entering a * in the field and select GetObject action. Go back to the Bucket policy section and copy your Bucket ARN, pasting it into the appropriate policy generator field. Add statement, generate policy and paste the result back in the Bucket policy section while adding a /* after your app name in the resource key.
+
+5. After saving the policy, go to the Access control list section and tick the List box under Everyone (public access) section which will finish the setup.
+
+6. In the search bar, search for Identity and Access Management (IAM). Select user groups from the dropdown, name and create a group. 
+
+7. Select policies from left-side dropdown and create a policy. Select the JSON tab and import managed policy button. Select AmazonS3FullAccess policy and import it. Copy your ARN again from the Bucket policy section and replace the resource key with a list containing your ARN and the ARN followed by /* which will refer to all the files in your bucket. With that done, click review policy, name and create it.
+
+8. Go back to the group created in step 6 and under Permissions tab, select add permissions - Attach Policies, attaching the created policy.
+
+9. Select the users choice from dropdown to add a user to the group. Name the user and tick Access key - Programmatic access box. Clicking next add user to the needed group in the table. Finalize adding user and download csv file before closing.
+
+### Connecting Django, Heroku and AWS
+
+1. In the terminal `pip3 install boto3` and `pip3 install django-storages`. 
+
+2. Add "storages" to your settings, installed apps. Also add the AWS variables which I will not list here, but you can find them my settings file. Remember to change your AWS region if needed. These variables also need to be added to Heroku and can be found in the downloaded csv file. Make sure to keep them secret. Also, remove the DISABLE_COLLECSTATIC variable.
+
+3. Create custom storages file, you can refer to my own and add static files config in settings file.
+
+4. Confirm your superuser email and add Stripe keys to Heroku as well as the new webhook endpoint. With that done, deployment is complete.
+
 ## Commit messages
 
 ## Credits
