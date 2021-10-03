@@ -1324,6 +1324,10 @@ input::-webkit-inner-spin-button {
         width: 90%;
     }
 
+    .filter {
+        width: fit-content !important;
+    }
+
     /* Product page */
     #brand-img {
         display: none;

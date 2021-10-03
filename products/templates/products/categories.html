@@ -9,10 +9,10 @@
 {% endfor %}
 {% endif %}
 <div class="category">
-    <section class="filter">
+    <section class="filter mb-5">
         <h1 tabindex="0">Filter</h1>
         <a href="#product-list" tabindex="0" aria-label="skip to product list"></a>
-        <button>clear all</button>
+        <a class="btn btn-sm btn-light ms-3" href="{% url 'categories' category='all' %}">clear all</a>
         <div class="brand-filter">
             <h2 tabindex="0">Brand</h2>
             <label>
@@ -82,7 +82,7 @@
         {% endif %}
         {% for product in products %}
         <a data-price="{{product.price}}" data-date="{{product.date|date:'Y-m-d H:i'}}" href="{% url 'product' product=product.id %}">
-            <div class="product" id="{{product.brand|lower}}">
+            <div class="product {% if request.user.is_superuser %}mb-5{% endif %}" id="{{product.brand|lower}}">
                 <img aria-hidden="true" class="product-img" src="{{product.img}}" alt="{{product.name}}">
                 <img aria-hidden="true" class="brand-img" src="{% static 'images/' %}{{product.brand|lower}}.webp" alt="{{product.brand}} logo">
                 <div class="details">
