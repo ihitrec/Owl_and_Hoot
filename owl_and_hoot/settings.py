@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Owl_and_Hoot.urls'
+ROOT_URLCONF = 'owl_and_hoot.urls'
 
 TEMPLATES = [
     {
@@ -103,7 +103,7 @@ ACCOUNT_USERNAME_MIN_LENGTH = 5
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
-WSGI_APPLICATION = 'Owl_and_Hoot.wsgi.application'
+WSGI_APPLICATION = 'owl_and_hoot.wsgi.application'
 
 
 # Database
