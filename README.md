@@ -119,8 +119,16 @@ Push your changes to Github and then to Heroku: `git push heroku master` (could 
 
 3. Create custom storages file, you can refer to my own and add static files config in settings file.
 
-4. Confirm your superuser email and add Stripe keys to Heroku as well as the new webhook endpoint. With that done, deployment is complete.
+4.  just confirm your superuser email and add Stripe keys to Heroku. With that done, deployment is complete,
 
 ## Commit messages
+
+The commit messages follow conventional commit format: **type(optional scope): description**. Here are the commit message types used in this project:  
+
+- fix: bug fixes
+- feat: new features
+- docs: adding content to README
+- style: adding comments, spaces and other style changes
+- refractor: editing code but not functionality e.g. renaming a variable
 
 ## Credits
