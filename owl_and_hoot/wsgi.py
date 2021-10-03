@@ -1,5 +1,5 @@
 """
-WSGI config for Owl_and_Hoot project.
+WSGI config for owl_and_hoot project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Owl_and_Hoot.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'owl_and_hoot.settings')
 
 application = get_wsgi_application()
