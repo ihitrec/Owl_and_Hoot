@@ -70,6 +70,7 @@
 
     <section id="product-list" class="products" aria-label="product list">
         <p class="no-products">No products matching selected filter.</p>
+        {% if request.user.is_superuser == False %}
         <div class="sort-container">
             <select id="sort">
                 <option selected disabled>Sort by</option>
@@ -78,6 +79,7 @@
                 <option value="high">Highest price</option>
             </select>
         </div>
+        {% endif %}
         {% for product in products %}
         <a data-price="{{product.price}}" data-date="{{product.date|date:'Y-m-d H:i'}}" href="{% url 'product' product=product.id %}">
             <div class="product" id="{{product.brand|lower}}">
