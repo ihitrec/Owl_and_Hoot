@@ -23,11 +23,11 @@ function generateImages(rating, target) {
         for (i; i < roundedRating - 1; i++) {
             fullStar(target);
         }
-        $($(".rating")[target]).append("<img src='../images/star-half-full.png'></img>");
+        $($(".rating")[target]).append("<img src='https://owl-and-hoot.s3.amazonaws.com/static/images/star-half-full.png'></img>");
     }
     $($(".rating")[target]).append(`<p>${ratingNum}</p>`);
 }
 
 function fullStar(target) {
-    $($(".rating")[target]).append("<img src='../images/star-full.png'></img>");
+    $($(".rating")[target]).append("<img src='https://owl-and-hoot.s3.amazonaws.com/static/images/star-full.png'></img>");
 }
