@@ -87,7 +87,11 @@
                 <img aria-hidden="true" class="brand-img" src="{% static 'images/' %}{{product.brand|lower}}.webp" alt="{{product.brand}} logo">
                 <div class="details">
                     <p>{{product.name}}</p>
+                    {% if product.sale_price %}
+                    <p><s>{{product.price|floatformat}}</s> <span class="text-danger">€{{product.sale_price|floatformat}}</span> </p>
+                    {% else %}
                     <p>€{{product.price|floatformat}}</p>
+                    {% endif %}
                 </div>
                 {% if request.user.is_superuser %}
                 <div class="product-edit mt-1">

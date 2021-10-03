@@ -68,7 +68,10 @@ def details(request):
     prices = []
     for product, value in cart_items.items():
         for num in value.values():
-            prices.append(product.price*num)
+            if product.sale_price:
+                prices.append(product.sale_price*num)
+            else:
+                prices.append(product.price*num)
             quantity += num
     total = sum(prices)
     details.cart_items = cart_items

@@ -11,7 +11,9 @@
         <div class="cart-product-detail">
             <form action="" method="POST">
                 {% csrf_token %}
-                <h1 id="product-name">{{item.name}}</h1>
+                <a href="{% url 'product' product=item.id %}">
+                    <h1 id="product-name">{{item.name}}</h1>
+                </a>
                 <p>size <span>{{size}}</span></p>
                 <label for="quantity">Qty:</label>
                 <input type="number" name="quantity" id="quantity" minlength="1" min="1" max="99" value="{{quantity}}" required>

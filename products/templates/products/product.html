@@ -41,7 +41,12 @@
                 </label>
             </div>
             <div class="add-to-cart">
-                <span id="price-span">€{{product.price}}</span>
+                <span id="price-span">
+                    {% if product.sale_price %}
+                    <s>{{product.price|floatformat}}</s> <span class="text-danger">€{{product.sale_price|floatformat}}</span>
+                    {% else %}
+                    €{{product.price|floatformat}}
+                    {% endif %}</span>
                 <button type="submit">
                     Add to cart
                 </button>
