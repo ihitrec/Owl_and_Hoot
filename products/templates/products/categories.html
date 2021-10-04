@@ -81,8 +81,8 @@
         </div>
         {% endif %}
         {% for product in products %}
-        <a data-price="{% if product.sale_price %}product.sale_price{% else %}product.price{% endif %}" data-date="{{product.date|date:'Y-m-d H:i'}}"
-            href="{% url 'product' product=product.id %}">
+        <a data-price="{% if product.sale_price %}{{product.sale_price}}{% else %}{{product.price}}{% endif %}"
+            data-date="{{product.date|date:'Y-m-d H:i'}}" href="{% url 'product' product=product.id %}">
             <div class="product {% if request.user.is_superuser %}mb-5{% endif %}" id="{{product.brand|lower}}">
                 <img aria-hidden="true" class="product-img" src="{{product.img}}" alt="{{product.name}}">
                 <img aria-hidden="true" class="brand-img" src="{% static 'images/' %}{{product.brand|lower}}.webp" alt="{{product.brand}} logo">

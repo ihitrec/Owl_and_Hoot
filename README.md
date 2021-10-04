@@ -73,13 +73,14 @@ The fourth and final project in Code Institute Full Stack Developer program feat
 ## Database schema
  
 ![UserProfile model](static/images/readme_images/userprofile-db.png)
-The UserProfile model is a subclass of the Django [User model](https://docs.djangoproject.com/en/3.2/ref/contrib/auth/#fields) that sets default user information. As the information needs to be associated with a User, in case of deletion, the corresponding UserProfile instance is deleted as well. 
-
+The UserProfile model is a subclass of the Django [User model](https://docs.djangoproject.com/en/3.2/ref/contrib/auth/#fields) that sets default user information. As the information needs to be associated with a User, in case of deletion, the corresponding UserProfile instance is deleted as well.  
+***
 ![Order model](static/images/readme_images/order-db.png)
-The Order model has a ForeignKey of UserProfile. If a profile is deleted, the field will be set to null as we still need to keep the order in the system. The products in the order are set as a JSONField which shows quantities and sizes for each product. The field is formated in the admin by [django-json-widget](https://github.com/jmrivas86/django-json-widget) for better readability.
-
+The Order model has a ForeignKey of UserProfile. If a profile is deleted, the field will be set to null as we still need to keep the order in the system. The products in the order are set as a JSONField which shows quantities and sizes for each product. The field is formated in the admin by [django-json-widget](https://github.com/jmrivas86/django-json-widget) for better readability.  
+***
 ![Product model](static/images/readme_images/product-db.png)
-The Product model has no relational keys as its needed values are transformed into a dictionary and saved. If a product gets deleted, it is automatically removed from all the carts that it was in via the context. The intention behind the rating fields is to enable users to rate the product, but I am unsure if I will have the time to add that functionality.
+The Product model has no relational keys as its needed values are transformed into a dictionary and saved. If a product gets deleted, it is automatically removed from all the carts that it was in via the context. The intention behind the rating fields is to enable users to rate the product, but I am unsure if I will have the time to add that functionality.  
+***
 
 
 
