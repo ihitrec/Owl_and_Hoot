@@ -254,6 +254,32 @@ The Product model has no relational keys as its needed values are transformed in
 
 ## Deployment
 
+### Local deployment
+
+1. On the top of my repository page, press the code button and copy the url or skip to step 2.
+
+2. In your IDE terminal, while in the folder in which you whish to clone the project type `git clone https://github.com/ihitrec/Owl_and_Hoot.git`
+
+3. After cloning the project, you need to set it up. Firstly, install the required packages with `pip3 install -r requirements.txt`
+
+4. Create a `.gitignore` file and paste the following code:
+```core.Microsoft*
+core.mongo*
+core.python*
+env.py
+__pycache__/
+*.py[cod]
+node_modules/
+.github/
+*.sqlite3
+*.pyc
+```
+
+5. Define all the environment variables: DEVELOPMENT, SECRET_KEY, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY and STRIPE_WH_SECRET
+
+6. I am unsure if this step is needed, but I would assume that the migrations need to be made and superuser created
+
+***
 ### Heroku
 1. Create a new app on the Heroku website and choose the region in which most of your users reside.
 
