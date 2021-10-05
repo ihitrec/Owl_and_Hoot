@@ -83,6 +83,18 @@ The products including all descriptive data as well as the images has been taken
 ##### Python
 ### Browser Compatibility
 
+The website was developed on Chrome and tested on Mozilla, Edge and Opera for desktop. There are no changes to the user experience apart from a small change on the product input field which was fixed using CSS. All the CSS prefixes have been added by autoprefixer
+
+Website works well on Samsung internet for mobile and tablets as well. There is a slight issue with the menu animation on the home screen. I suspect it has to do with the hero section paragraph having a sticky position. 
+
+### Accessibility
+
+#### Testing
+General accessibility was tested using the [WAVE](https://wave.webaim.org/) evaluation tool. The main page shows the headlines as having a low contrast. When inspecting the contrast in DevTools, it says no contrast information available. I assume since an image is a background, it does not recognise it. Otherwise, the headlines have a large font and should be visible. Other elements mostly satisfy the AAA contrast ratio with some satisfiying the AA ratio. All images have an alt tag apart from some which do not need it. For example rating stars do not as the rating is shown in text form.
+
+#### Screen readers
+The goal was to make the website easily navigatable by a screen reader. I have used the [Screen Reader](https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn) extension from Chrome to test the navigation. Idealy, JAWS would be used, but it is not free. The homepage can be navigated using tab completely. The nav has a skip to main content link at the beginning. It does not work perfectly becuse the reader reads skipped instead of the section name, but it was the only way I could get it to focus the right section of each page with some javascript. The filter on the category page also has a skip filter link which skips to the product list. I have ignored the sorting for now as the menu does not open using enter. The product list section has the products information as an aria label. I have not managed to add the neccessary labels and tabidexes to other pages.
+
 
 ## Database schema
  
