@@ -1,15 +1,12 @@
 $(document).ready(function () {
     // Loop trough ratings and add star imgs if rating exists 
-    let ratings = $(".rating")
-    console.log(ratings)
-    for (i = 0; i < ratings.length; i++) {
-        let ratingParsed = parseFloat(ratings[i].innerHTML)
-        console.log(ratingParsed)
-        console.log(i)
+    let ratings = $(".rating");
+    for (let i = 0; i < ratings.length; i++) {
+        let ratingParsed = parseFloat(ratings[i].innerHTML);
         if (ratingParsed > 0) {
-            generateImages(ratingParsed, i)
+            generateImages(ratingParsed, i);
         } else {
-            ratings[i].innerHTML = ''
+            ratings[i].innerHTML = '';
         }
     }
 
@@ -19,7 +16,7 @@ $(document).ready(function () {
         ratings[target].innerHTML = '';
         let roundedRating = Math.round(rating);
         if (roundedRating <= rating) {
-            for (x = 0; x < roundedRating; x++) {
+            for (let x = 0; x < roundedRating; x++) {
                 fullStar(target);
             }
         } else if (roundedRating > rating) {

@@ -17,7 +17,7 @@ $(document).ready(function () {
 
     function toggleMenu() {
 
-        $(".menu-btn").css("pointer-events", "none")
+        $(".menu-btn").css("pointer-events", "none");
         let timeframe;
 
         if ($("nav").height() < 250) {
@@ -37,11 +37,11 @@ $(document).ready(function () {
             $("#initial").toggleClass("order");
             $(".login").toggleClass("second");
             $(".cart").toggleClass("third");
-        }, timeframe)
+        }, timeframe);
 
         setTimeout(function () {
-            $(".menu-btn").css("pointer-events", "initial")
-        }, 500)
+            $(".menu-btn").css("pointer-events", "initial");
+        }, 500);
 
     }
 
@@ -50,13 +50,13 @@ $(document).ready(function () {
     // Focus after nav, skip reading all content
     $("#skip-nav").click(function () {
         $("header").next().attr("tabindex", "0");
-        $("header").next().attr("aria-label", "skipped")
+        $("header").next().attr("aria-label", "skipped");
         $("header").next().focus();
         setTimeout(function () {
-            $("header").next().removeAttr("aria-label")
+            $("header").next().removeAttr("aria-label");
             $("header").next().removeAttr("tabindex");
-        }, 2000)
-    })
+        }, 2000);
+    });
 
     /* Messages */
 
@@ -88,7 +88,7 @@ $(document).ready(function () {
     $(".search input").focusout(collapseSearch);
     // Close animation depending on scr size, prevent multiple clicks
     function collapseSearch() {
-        $(".search input").css("pointer-events", "none")
+        $(".search input").css("pointer-events", "none");
         if ($(window).width() < 750) {
             $(".search").animate({
                     width: "33%",
@@ -107,7 +107,7 @@ $(document).ready(function () {
         }, function () {
             $(".search input").val("");
             highlight();
-            $(".search input").css("pointer-events", "auto")
+            $(".search input").css("pointer-events", "auto");
         });
     }
 
@@ -115,13 +115,13 @@ $(document).ready(function () {
     // Indicate form submit btn
     function highlight() {
         if ($(".search input").val().length > 0) {
-            $(".search img").addClass("highlight-search")
+            $(".search img").addClass("highlight-search");
         } else {
-            $(".search img").removeClass("highlight-search")
+            $(".search img").removeClass("highlight-search");
         }
     }
 
-    $(".search img").click(submitSearch)
+    $(".search img").click(submitSearch);
     // Submit form
     function submitSearch() {
         if ($(".search img").hasClass("highlight-search")) {
@@ -138,11 +138,11 @@ $(document).ready(function () {
     $($(".rating-filter label")).click(toggleRating);
 
     function toggleRating(event) {
-        event.preventDefault()
+        event.preventDefault();
         let currentInput = $($(this).children()[0]);
         currentInput.prop('checked', (!currentInput.is(':checked')));
         $(this).toggleClass("checked-rating");
-        filter()
+        filter();
     }
 
     // Hide products not matching single or both filters
@@ -150,14 +150,14 @@ $(document).ready(function () {
 
         let inputs = $(".filter input");
         let checked = [];
-        for (i = 0; i < inputs.length; i++) {
+        for (let i = 0; i < inputs.length; i++) {
             if ($(inputs[i]).is(':checked')) {
                 checked.push($(inputs[i]).val());
             }
         }
 
         let products = $(".product");
-        for (i = 0; i < products.length; i++) {
+        for (let i = 0; i < products.length; i++) {
 
             let productRating = parseInt($(products[i]).find(".rating").text()).toString();
             let productBrand = $(products[i]).attr("id");
@@ -178,7 +178,7 @@ $(document).ready(function () {
                 }
             }
         }
-        noProducts("filter")
+        noProducts("filter");
     }
 
     // Turn on the filter when brand link is clicked
@@ -189,21 +189,21 @@ $(document).ready(function () {
 
     // Remember last filter when using back btn in browser
     if ($(".filter input").is(':checked')) {
-        let ratingInput = $(".rating-filter input")
-        for (i = 0; i < ratingInput.length; i++) {
+        let ratingInput = $(".rating-filter input");
+        for (let i = 0; i < ratingInput.length; i++) {
             if ($(ratingInput[i]).is(':checked')) {
                 $(ratingInput[i]).parent().toggleClass("checked-rating");
             }
         }
-        filter()
+        filter();
     }
 
     // Show reason when no products showing in categories
     function noProducts(reason) {
         if (reason === "search") {
-            $(".no-products").html("No products matching search query.")
+            $(".no-products").html("No products matching search query.");
         } else {
-            $(".no-products").html("No products matching selected filter.")
+            $(".no-products").html("No products matching selected filter.");
         }
         if (!$(".product").is(":visible")) {
             $(".no-products").css('display', 'block');
@@ -213,7 +213,7 @@ $(document).ready(function () {
             $(".sort-container").css('display', 'block');
         }
     }
-    noProducts("search")
+    noProducts("search");
 
     /*  Sorting  */
 
@@ -223,24 +223,24 @@ $(document).ready(function () {
     function sorted() {
 
         let newOrder;
-        let products = $("#product-list a")
+        let products = $("#product-list a");
 
         if ($('#sort').val() === "newest") {
             newOrder = $(products.toArray().sort(function (a, b) {
-                aVal = Date.parse(a.getAttribute("data-date"));
-                bVal = Date.parse(b.getAttribute("data-date"));
+                let aVal = Date.parse(a.getAttribute("data-date"));
+                let bVal = Date.parse(b.getAttribute("data-date"));
                 return bVal - aVal;
             }));
         } else if ($('#sort').val() === "low") {
             newOrder = $(products.toArray().sort(function (a, b) {
-                aVal = parseInt(a.getAttribute("data-price"));
-                bVal = parseInt(b.getAttribute("data-price"));
+                let aVal = parseInt(a.getAttribute("data-price"));
+                let bVal = parseInt(b.getAttribute("data-price"));
                 return aVal - bVal;
             }));
         } else if ($('#sort').val() === "high") {
             newOrder = $(products.toArray().sort(function (a, b) {
-                aVal = parseInt(a.getAttribute("data-price"));
-                bVal = parseInt(b.getAttribute("data-price"));
+                let aVal = parseInt(a.getAttribute("data-price"));
+                let bVal = parseInt(b.getAttribute("data-price"));
                 return bVal - aVal;
             }));
         }
@@ -252,7 +252,7 @@ $(document).ready(function () {
 
     // Remember last sort when using back btn in browser
     if ($('#sort').val()) {
-        sorted()
+        sorted();
     }
 
     /*  Product */
@@ -264,16 +264,16 @@ $(document).ready(function () {
     });
 
     // Increase or decrease product count on symbol click (1-99)
-    $(".plus-minus").click(updateQuantity)
+    $(".plus-minus").click(updateQuantity);
 
     function updateQuantity() {
         let currentVal = $(".add-to-cart input").val();
         let operation = $(this).attr("data-operation");
-        let newVal = eval(`${currentVal}${operation}1`)
+        let newVal = eval(`${currentVal}${operation}1`);
         if (newVal < 1) {
             newVal = 1;
         } else if (newVal > 99) {
-            newVal = 99
+            newVal = 99;
         }
         $(".add-to-cart input").val(newVal);
     }
@@ -281,7 +281,7 @@ $(document).ready(function () {
     /* Cart */
 
     // Open/close cart and overlay
-    $(".cart img, .overlay").click(showCart)
+    $(".cart img, .overlay").click(showCart);
 
     function showCart() {
         $("#cart").toggleClass("opened-cart");
@@ -339,13 +339,13 @@ $(document).ready(function () {
 
     /* Delete product alert */
 
-    $(".product-alert").click(openAlert)
+    $(".product-alert").click(openAlert);
     // Toggle alert on delete click
     function openAlert() {
         $(this).parent().siblings(".alert").toggleClass("edit-alert");
     }
 
-    $(".alert .btn-close").click(closeAlert)
+    $(".alert .btn-close").click(closeAlert);
     // Hide alert on close click
     function closeAlert() {
         $(this).parent().toggleClass("edit-alert");
