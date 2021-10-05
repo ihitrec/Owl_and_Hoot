@@ -4,6 +4,11 @@ The fourth and final project in Code Institute Full Stack Developer program feat
 
 ![Responsive preview](static/images/readme_images/responsive-view.png)
 
+> Admin login credentials:  
+Username: user  
+Password: Superuser2021  
+Website link: https://owl-and-hoot.herokuapp.com/
+
 ## UX
 
 ### User Stories
@@ -191,4 +196,4 @@ The commit messages follow conventional commit format: **type(optional scope): d
 
 ## Final notes
 
-There are a lot of improvements that can be made and potential features that can be added. Starting the project I have underestimated the complexity of it which made me aim for some unrealistic goals at the beginning. That is why I have updated the user story section at the end. The final version did not really cover the stories set at the beginning, but it did cover some which I could not percieve when starting. My goal was to do the project completely on my own without relying on the Butique Ado project. It was working well up to about the Stripe section at which point the deadline was nearing and I had to start watching the videos and getting the code from there. Some parts were copied, while some had to be modified to fit the code written up to that point.
+There are a lot of improvements that can be made and potential features that can be added. Starting the project I have underestimated the complexity of it which made me aim for some unrealistic goals at the beginning. That is why I have updated the user story section at the end. The final version did not really cover the stories set at the beginning, but it did cover some which I could not percieve when starting. My goal was to do the project completely on my own without relying on the Butique Ado project. It was working well up to about the Stripe section at which point the deadline was nearing and I had to start watching the videos and getting the code from there. Some parts were copied, while some had to be modified to fit the code written up to that point. Overall, I have really enjoyed the coding process and have learned a lot about Django.
