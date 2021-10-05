@@ -90,7 +90,108 @@ The products including all descriptive data as well as the images has been taken
 ## Testing
 
 ### User stories testing
+
+User stories have been updated for the reasons stated in the final notes. As such, all the bases have been covered and do not need further testing. The features that were initially supposed to be included are:
+
+- The ability to delete a profile
+- Multiple product images
+- The option to leave a review
+
 ### Features and tests
+
+#### Navigation  
+
+- Search  
+The search bar should open and close with animation and highlight the send button on user input. It should redirect to the category page with the searched products or a paragraph saying none were found.
+
+The search finds products with any of the queried words in any part of the product name or category. If a brand is searched for, a brand filter is added. The brand part of the query is ignored as searching for brand jeans would also include other categories with the brand in the name. The gender filter is also ignored if not accompanied by additional queries for the same reason. I have included the synonyms for products that are available on the website e.g. searching for trousers includes a search for the products in the list ['jeans', 'trousers', 'pants', 'denim'].
+
+> The search works as intended with possible improvement of finding similar results if no products are found.
+
+- Navigation  
+Navigation is responsive and all links lead to the appropriate locations. The links are also changing depending on login status as intended.
+
+> The navigation close animation sometimes lags on the homepage
+
+#### Homepage
+
+- Hero and collection sections  
+The sections lead to the right pages and are responsive, the hero offer text moves smoothly regardless of device.
+
+- Top brands  
+The hover animations are implemented with tilt.js and work as intended. The links lead to the category page with the brand filter toggled.
+
+> Possible improvements are a bit more variety on the homepage as all the sections now just lead to a different filter in the category page.
+
+#### Add/edit product
+
+- The page is restricted to the admin only and cannot be bypassed by entering the link. Adding a product adds it and refreshes the page since there might be more products to add. Editing a product leads to the edited product page to see the results. I have added the rating field as well since rating by users has not been enabled.
+
+#### Categories
+
+- Filter  
+The filter adds display none to the products not included in it and only shows the products whith the combined filter if both selected. Clearing the filter removes all filters as intended.
+
+> Possible improvements: the filter should include more filtering options such as categories, price range and more. Under the filter headline, there should be all the selected filters as it was imagined in the wireframes. 
+
+- Sorting
+Sorting should take all the products, rearange them according to the filter and show the new order. There is a bug for sorting while logged in as admin because I did not take the admin controls into consideration when making it. It has therefore been removed for admins which should not be too big of an issue.
+
+>  Possible improvements include more sorting options and making it screen reader accessible.
+
+- Product list  
+Product list shows the correct procucts in regard to the category/filters selected and is fully responsive.
+
+> Possible improvements include category sections for types of products, pagination and last product in the list aligned left.
+
+#### Product
+
+- The page shows the correct product details and is fully responsive. There are sizes available as well as the quantity selector which can only be submitted in 1-99 range.
+
+> The intention was to include more product types and the sizes should probably be in numbers instead of letters. There should also be a stock counter showing unavailable sizes.
+
+#### Cart
+
+- The cart is a small window showing on the right when opened. It is fixed to the same position and fully responsive. On update it reopens to show the updated quantity or no products if none in cart. It only allows update in 1-99 range. If cart is empty, it also redirects form the checkout page. 
+
+> Possible improvements include showing price for discounted items in red and only showing the update button for products that had the quantity changed.
+
+#### Checkout
+
+- Payment  
+Payment is implemented trough Stripe. If the user closes the window before it is complete, the webhook finishes the payment and creates the order in the system. Since it is a Stripe functionality, all addidtional security features are included and errors are shown. Saving the info to profile is only shown to logged in users and works as intended.
+
+- Cart preview  
+The preview basically just shows the cart in a bigger screen before a purchase. There is an edit cart button that shows the 
+
+- Checkout success  
+Checking out successfully creates an order summary that gets sent to the users email as intended.
+
+#### Profile
+
+- Saving the profile information works as intended and validates the fields in the same way they would be validated on the checkout page. Order history shows the correct orders or no orders if none. For each order, there is a link which shows the same confirmation that was rendered on purchase. There is a log out button included and a product management button which is only shown to superusers.
+
+#### Allauth templates
+
+- Templates have been customized and are fully responsive. For the registration to be successful, the user needs to confirm the email.
+
+#### Footer
+
+- The links lead to correct websites and open in a new tab. The subscribe section is only for illustrative purposes.
+
+> Possible improvements are to add the subscribe functionality.
+
+#### Additional
+
+- Class template filter  
+I wanted to add the forms as you normally would and have created a filter to add class to template elements. In some forms I went the long way of adding it to each field before I realized I could just loop trough the inputs and labels and easily add the appropriate classes.
+
+- Loop template filter  
+I had issues getting the total count when looping trough the product prices in a nested loop on the cart page. The filter keeps track of it in order to get the correct price of each product in a list. 
+
+#### Possible future features
+
+There are so many potential features that I could probably work on the project for another two months. They are all the improvements mentioned above plus: discount promo codes, product comments, whishlist, social media login, discount countdown and more.
 
 ### Code validation
 ##### HTML
