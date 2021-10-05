@@ -83,9 +83,13 @@ The products including all descriptive data as well as the images has been taken
 ##### Python
 ### Browser Compatibility
 
-The website was developed on Chrome and tested on Mozilla, Edge and Opera for desktop. There are no changes to the user experience apart from a small change on the product input field which was fixed using CSS. All the CSS prefixes have been added by autoprefixer
+The website was developed on Chrome and tested on Mozilla, Edge and Opera for desktop. There are no changes to the user experience apart from a small change on the product input field which was fixed using CSS. All the CSS prefixes have been added by autoprefixer.
 
-Website works well on Samsung internet for mobile and tablets as well. There is a slight issue with the menu animation on the home screen. I suspect it has to do with the hero section paragraph having a sticky position. 
+Website works well on Samsung internet for mobile and tablets as well. There is a slight issue with the menu animation on the home screen. I suspect it has to do with the hero section paragraph having a sticky position.
+
+As for the Lighthouse score, it is pretty good apart form the performance section in which the images could use optimization. I have optimized most images by reducing the quality and transforming them into webp.
+
+![Lighthouse score](static/images/readme_images/lighthouse-score.png)
 
 ### Accessibility
 
