@@ -183,6 +183,11 @@ Checking out successfully creates an order summary that gets sent to the users e
 
 #### Additional
 
+- Messages  
+Main messages work as intended but the logic could use some improvement as they are scattered across different templates. If a product is deleted from the database, it is removed form all the carts that it is in and a message is shown to the user. The message is not visible on all pages which needs fixing.
+
+> The removed from db product message should be shown on each page and possibly include the product name.
+
 - Class template filter  
 I wanted to add the forms as you normally would and have created a filter to add class to template elements. In some forms I went the long way of adding it to each field before I realized I could just loop trough the inputs and labels and easily add the appropriate classes.
 
@@ -192,6 +197,19 @@ I had issues getting the total count when looping trough the product prices in a
 #### Possible future features
 
 There are so many potential features that I could probably work on the project for another two months. They are all the improvements mentioned above plus: discount promo codes, product comments, whishlist, social media login, discount countdown and more.
+
+### Bugs and fixes
+
+I will just add the bugs which were difficult to fix. For all other bug fixes, check out the commits of type fix.
+
+- Stripe   
+I had the most problems with Stripe some were easy to fix but took a while like forgetting the forward slash in the webhook destination. Thankfully someone in the Slack community had the same issue which helped me find the problem. The biggest issues were webhooks. The first one was the test intents not working due to my gitpod server not being public. The other one was closing the payment window created the payment but did not create the order in the database. This took me hours to fix as I did not really understand how the webhooks worked. After using print statements in every related file and going trough the documentation, I managed to find the problem and fix it. While stressful due to the deadline, It was also fun as it taught me a way of debugging which I did not previously understand.
+
+- Product price loop in cart  
+All product prices are contained in a list which I tought it would be easy to loop trough using the forloop counter. Since it was a nested loop, that was not possible and so I have made list_index filter which loops trough the prices correctly.
+
+- Cart context  
+As I have made the cart context before starting the videos, my logic was different which caused me to have problems with Stripe. Stripe needed the total cost of the purchase in the view, before the context was rendered. I had to change the the logic so the checkout page has access to context functions, enabling it to get the product details and update products. The variables were then set inside the function and called from the view. The updated status which opens the cart had to be changed as well since calling the function twice when the product is deleted was throwing an error. It was changed to a global variable and updated accordingly.
 
 ### Code validation
 ##### HTML
