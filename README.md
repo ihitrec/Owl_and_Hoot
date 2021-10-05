@@ -8,12 +8,15 @@ The fourth and final project in Code Institute Full Stack Developer program feat
 
 ### User Stories
 
+#### Users
+
 - I want to be able to create an account.
-- I want the option to delete my profile.
-- I want to see the reviews and the posibility to leave one.
-- I would like to search for products and filter the brands I desire.
+- I want to view my profile and order history.
+- I want the option to save default delivery information.
 - I want to be able to add a product to basket and view it before going to checkout.
-- I wish the products had good images from different angles to get a better look of the product.
+- I want to get email confirmation of the products that I ordered.
+- I want to see the product rating.
+- I would like to search for products and filter the brands I desire.
 
 ### Wireframes
 
@@ -186,4 +189,6 @@ The commit messages follow conventional commit format: **type(optional scope): d
 - style: adding comments, spaces and other style changes
 - refractor: editing code but not functionality e.g. renaming a variable
 
-## Credits
+## Final notes
+
+There are a lot of improvements that can be made and potential features that can be added. Starting the project I have underestimated the complexity of it which made me aim for some unrealistic goals at the beginning. That is why I have updated the user story section at the end. The final version did not really cover the stories set at the beginning, but it did cover some which I could not percieve when starting. My goal was to do the project completely on my own without relying on the Butique Ado project. It was working well up to about the Stripe section at which point the deadline was nearing and I had to start watching the videos and getting the code from there. Some parts were copied, while some had to be modified to fit the code written up to that point.
