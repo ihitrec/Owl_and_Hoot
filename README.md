@@ -58,18 +58,26 @@ The products including all descriptive data as well as the images has been taken
 
 ![Heroku icon](static/images/readme_images/heroku.png) Heroku - cloud deployment platform
 
+![AWS icon](static/images/readme_images/aws.png) Amazon Web Service - static file hosting
+
+![Django icon](static/images/readme_images/django.png) Django - high-level Python web framework enabling rapid development
+
 ##### Repository, coding environment and version control
 
 - [Gitpod](https://www.gitpod.io/) - coding environment
 - [Git](https://git-scm.com/) - used for version control
 - [Github](https://www.gitpod.io/) - hosting platform for managing repositories and more
 
-#####  Resources
+#####  Resources and packages
 
 - [Flaticon](https://www.flaticon.com/) - used for icons
 - [Pexels](https://www.pexels.com/) - homepage images
 - [Google Fonts](https://fonts.google.com/) - source for all fonts on the website
-- [JD](https://www.jdsports.ie/) - source of all products including images and descriptions
+- [JD Ireland](https://www.jdsports.ie/) - source of all products including images and descriptions
+- [Ezgif](https://ezgif.com/) - image optimization
+- [Am I Responsive](http://ami.responsivedesign.is/) - responsive devices view on top of website
+- [Tilt.js](https://gijsroge.github.io/tilt.js/) - tilt effect in top brands section
+- [django-json-widget](https://github.com/jmrivas86/django-json-widget)- JSON format for products in the admin
 
 ## Testing
 
@@ -79,8 +87,11 @@ The products including all descriptive data as well as the images has been taken
 ### Code validation
 ##### HTML
 ##### CSS
+
 #### Javascript
+> [Beautify Tools](https://beautifytools.com/javascript-validator.php) validation passed with no errors. There is an eval warning which does not seem to be an issue since the code is trusted.
 ##### Python
+> Code is PEP8 compliant and validation only shows Django created file errors
 ### Browser Compatibility
 
 The website was developed on Chrome and tested on Mozilla, Edge and Opera for desktop. There are no changes to the user experience apart from a small change on the product input field which was fixed using CSS. All the CSS prefixes have been added by autoprefixer.
