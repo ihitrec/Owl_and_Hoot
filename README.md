@@ -27,7 +27,19 @@ The fourth and final project in Code Institute Full Stack Developer program feat
 
 
 ### Colors
+
+![Color palette](static/images/readme_images/palette.png)
+
+These are the main colors on the website. I wanted a more serious look for this project and have chosen the colors that seemed in line with that goal. There are slight variations to the #FEDE67 color which is used for certain buttons and borders. The goal was to make the logo the same color but it was not visible enough and the shade was changed and darkened. There are also buttons which use Bootstrap colors so I did not include hex codes. Some of them could potentially be improved so the colors better match the website theme. It is only for the buttons that are shown to the admin when adding/deleting products so I left them red and green for better indication of the action taken. The #2E2E2E is used for the footer and the #EEEEEE is used as a background for certain headlines.
+
 ### Fonts
+The main font on the website is Roboto and it is used on almost all elements. The look is adjusted by adding different font weights and capitalization. Add to cart form on the product page is the only element that has Source Sans Pro for font instead of Roboto. It seemed a bit more serious and works well together.
+
+### Icons
+All icons on the website have been taken form [Flaticon](https://www.flaticon.com/) and licenced.
+
+### Product source
+The products including all descriptive data as well as the images has been taken from [JD Sports Ireland](https://www.jdsports.ie/?gclid=CjwKCAjw3riIBhAwEiwAzD3TiUo9NHUbjYNF8Qlmg0SqdBPJYEm9ocl4K_euLb1jSKqI_jryyi0-7hoCHzcQAvD_BwE&gclsrc=aw.ds#). I would not usually do so but this project is for educational purposes only and no transactions are possible.
 
 ## Technologies used
 
