@@ -7,7 +7,7 @@
     {% for item, value in cart_items.items %}
     {% for size, quantity in value.items %}
     <div class="cart-product">
-        <img src="{{item.img}}" alt="">
+        <img src="{{item.img}}" alt="{{item.name}} image">
         <div class="cart-product-detail">
             <form action="" method="POST">
                 {% csrf_token %}
@@ -17,7 +17,7 @@
                 <p>size <span>{{size}}</span></p>
                 <label for="quantity">Qty:</label>
                 <input type="number" name="quantity" id="quantity" minlength="1" min="1" max="99" value="{{quantity}}" required>
-                <img src="{% static 'images/update-qty.png' %}" alt="">
+                <img src="{% static 'images/update-qty.png' %}" alt="update quantity">
                 <p>€{{ prices|list_index}}</p>
                 <input name="size" id="hidden-input" value="{{size}}" type="text">
                 <button class="hidden-btn" type="submit" name="cart-update" value="{{item.id}}">Update</button>

@@ -82,12 +82,12 @@
             </div>
         </div>
         <div class="col-lg-6 cart-preview mt-3">
-            <h1>Cart preview <img src="{% static 'images/cart-edit.png' %}" alt=""></h1>
+            <h1>Cart preview <img src="{% static 'images/cart-edit.png' %}" alt="edit cart"></h1>
             <div class="cart-products">
                 {% for item, value in cart_items.items %}
                 {% for size, quantity in value.items %}
                 <div class="cart-product">
-                    <img src="{{item.img}}" alt="">
+                    <img src="{{item.img}}" alt="{{item.name}} image">
                     <div class="cart-product-detail">
                         <h1 id="product-name">{{item.name}}</h1>
                         <p>size <span>{{size}}</span></p>
