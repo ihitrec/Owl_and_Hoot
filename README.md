@@ -2,6 +2,8 @@
 
 The fourth and final project in Code Institute Full Stack Developer program features an e-commerce fashion retailer called Owl & Hoot. It is designed to provide the full experience that a real online store would such as registering and making a purchase. The product database includes three famous brands with different products and categories. There is a possibility of adding many additional features and they will be added depending on viability and importance as well as the available time.
 
+![Responsive preview](static/images/readme_images/responsive-view.png)
+
 ## UX
 
 ### User Stories
