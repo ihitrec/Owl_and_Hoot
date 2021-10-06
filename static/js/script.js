@@ -350,4 +350,11 @@ $(document).ready(function () {
     function closeAlert() {
         $(this).parent().toggleClass("edit-alert");
     }
+
+    /* Signup popover */
+    $(function () {
+        $('[data-toggle="popover"]').popover({
+            trigger: 'hover',
+        });
+    });
 });

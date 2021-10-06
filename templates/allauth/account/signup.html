@@ -1,5 +1,5 @@
 {% extends "account/base.html" %}
-
+{% load static %}
 {% load i18n %}
 {% load add_class %}
 
@@ -8,7 +8,10 @@
 {% block inner_content %}
 <h2>{% trans "Sign Up" %}</h2>
 
+
 <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<img data-toggle="popover" title="Save your order history and payment information " src="{% static 'images/info.png' %}" alt="Signup reasons">
+
 
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
@@ -21,7 +24,6 @@
       <label for="id_email2">E-mail (again):</label>
       {{ form.email2|add_class:"form-control" }}
     </div>
-
     <div class="mb-3 col-12">
       <label for="id_username">Username:</label>
       {{ form.username|add_class:"form-control" }}
