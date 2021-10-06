@@ -212,13 +212,26 @@ All product prices are contained in a list which I tought it would be easy to lo
 As I have made the cart context before starting the videos, my logic was different which caused me to have problems with Stripe. Stripe needed the total cost of the purchase in the view, before the context was rendered. I had to change the the logic so the checkout page has access to context functions, enabling it to get the product details and update products. The variables were then set inside the function and called from the view. The updated status which opens the cart had to be changed as well since calling the function twice when the product is deleted was throwing an error. It was changed to a global variable and updated accordingly.
 
 ### Code validation
-##### HTML
-##### CSS
+
+##### HTML & CSS
+
+- The W3C validation website is down and in colsulting with student support, I used [HTML validation](https://validator.kldp.org/#validate_by_uri) and [CSS validation](https://css-validator.kldp.org/#validate_by_input) alternatives. They are marked as W3C validation but it seems outdated as it is picking up on some errors that should not be errors like CSS having a background color with opacity set. Apart from misidentified errors, the CSS is valid.
+
+The HTML is also valid with some errors that do not seem to be a problem.
+
+![Html validation](static/images/readme_images/html-validation.png)
+![Html validator warning](static/images/readme_images/html-validator-warning.png)
+
+I am unsure at how reliable the validator is due to the warning. I assume that the error in cart.html is not an issue since the form works as intended and the empty action is valid in HTML5.
 
 #### Javascript
+
 > [Beautify Tools](https://beautifytools.com/javascript-validator.php) validation passed with no errors. There is an eval warning which does not seem to be an issue since the code is trusted.
+
 ##### Python
+
 > Code is PEP8 compliant and validation only shows Django created file errors
+
 ### Browser Compatibility
 
 The website was developed on Chrome and tested on Mozilla, Edge and Opera for desktop. There are no changes to the user experience apart from a small change on the product input field which was fixed using CSS. All the CSS prefixes have been added by autoprefixer.
