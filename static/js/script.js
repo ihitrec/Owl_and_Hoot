@@ -160,7 +160,7 @@ $(document).ready(function () {
         for (let i = 0; i < products.length; i++) {
 
             let productRating = parseInt($(products[i]).find(".rating").text()).toString();
-            let productBrand = $(products[i]).attr("id");
+            let productBrand = $(products[i]).attr("data-brand");
             if (checked.length === 0) {
                 $(".product").css("display", "block");
                 break;

@@ -16,63 +16,57 @@
         <div class="col-lg-6">
             <div class="checkout-form">
                 <h1>Checkout</h1>
-                <form action="" method="post" id="checkout-form">
+                <form action="{% url 'checkout' %}" method="post" id="checkout-form">
                     {% csrf_token %}
                     <div class="row">
-                        <fieldset class="col-12">
-                            <div class="row">
-                                <legend class="col-12">Personal details</legend>
-                                <div class="mb-3 col-md-6">
-                                    {{form.full_name|add_class:"form-control"}}
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    {{form.email|add_class:"form-control"}}
-                                </div>
-                                <div class="mb-3 col-12">
-                                    {{form.phone_number|add_class:"form-control"}}
-                                </div>
+                        <fieldset class="col-12 row">
+                            <legend class="col-12">Personal details</legend>
+                            <div class="mb-3 col-md-6">
+                                {{form.full_name|add_class:"form-control"}}
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                {{form.email|add_class:"form-control"}}
+                            </div>
+                            <div class="mb-3 col-12">
+                                {{form.phone_number|add_class:"form-control"}}
                             </div>
                         </fieldset>
-                        <fieldset class="col-12">
-                            <div class="row">
-                                <legend class="col-12">Delivery</legend>
-                                <div class="mb-3 col-md-6">
-                                    {{form.city|add_class:"form-control"}}
+                        <fieldset class="col-12 row">
+                            <legend class="col-12">Delivery</legend>
+                            <div class="mb-3 col-md-6">
+                                {{form.city|add_class:"form-control"}}
 
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    {{form.county|add_class:"form-control"}}
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    {{form.country|add_class:"form-control"}}
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    {{form.postcode|add_class:"form-control"}}
-                                </div>
-                                <div class="mb-3 col-12">
-                                    {{form.street_address1|add_class:"form-control"}}
-                                </div>
-                                <div class="mb-3 col-12">
-                                    {{form.street_address2|add_class:"form-control"}}
-                                </div>
-                                {% if request.user.is_authenticated %}
-                                <div class="mb-3 col-12 info-save">
-                                    <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
-                                    <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
-                                </div>
-                                {% endif %}
                             </div>
+                            <div class="mb-3 col-md-6">
+                                {{form.county|add_class:"form-control"}}
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                {{form.country|add_class:"form-control"}}
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                {{form.postcode|add_class:"form-control"}}
+                            </div>
+                            <div class="mb-3 col-12">
+                                {{form.street_address1|add_class:"form-control"}}
+                            </div>
+                            <div class="mb-3 col-12">
+                                {{form.street_address2|add_class:"form-control"}}
+                            </div>
+                            {% if request.user.is_authenticated %}
+                            <div class="mb-3 col-12 info-save">
+                                <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
+                                <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+                            </div>
+                            {% endif %}
                         </fieldset>
-                        <fieldset class="col-12 mb-4">
-                            <div class="row">
-                                <legend class="col-12">Payment</legend>
-                                <!-- Stripe element -->
-                                <div id="card-element" class="col-12"></div>
-                                <!-- Form errors -->
-                                <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-                                <!-- Pass the client secret to the view so we can get the payment intent id -->
-                                <input type="hidden" value="{{ client_secret }}" name="client_secret">
-                            </div>
+                        <fieldset class="col-12 mb-4 row">
+                            <legend class="col-12">Payment</legend>
+                            <!-- Stripe element -->
+                            <div id="card-element" class="col-12"></div>
+                            <!-- Form errors -->
+                            <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                            <!-- Pass the client secret to the view so we can get the payment intent id -->
+                            <input type="hidden" value="{{ client_secret }}" name="client_secret">
                         </fieldset>
                         <div class="col-12">
                             <button id="submit-button" name="total_cost" value="{{total}}" type="submit" class="btn btn-dark">Submit</button>
@@ -91,7 +85,7 @@
                     <div class="cart-product-detail">
                         <h1 id="product-name">{{item.name}}</h1>
                         <p>size <span>{{size}}</span></p>
-                        <label for="quantity">Qty: {{quantity}}</label>
+                        <p>Qty: {{quantity}}</p>
                         <p>€{{ prices|list_index}}</p>
                     </div>
                 </div>
