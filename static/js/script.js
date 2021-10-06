@@ -61,7 +61,7 @@ $(document).ready(function () {
     /* Messages */
 
     if ($(".message-container").length) {
-        $(".message-container").delay(1200).fadeOut(1000);
+        $(".message-container").delay(1600).fadeOut(1000);
     }
 
     /* Search */
