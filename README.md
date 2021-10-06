@@ -58,7 +58,7 @@ The products including all descriptive data as well as the images has been taken
 
 ![Bootstrap icon](static/images/readme_images/bootstrap.png) Bootstrap - CSS framework with focus on responsive design
 
-![JavaScript icon](static/images/readme_images/javascript-icon.png) JavaScript - behavior of elements on the website 
+![JavaScript icon](static/images/readme_images/javascript-icon.png) JavaScript - behaviour of elements on the website 
 
 ![jQuery icon](static/images/readme_images/jquery-icon.png) jQuery - JavaScript library
 
@@ -130,12 +130,12 @@ The hover animations are implemented with tilt.js and work as intended. The link
 #### Categories
 
 - Filter  
-The filter adds display none to the products not included in it and only shows the products whith the combined filter if both selected. Clearing the filter removes all filters as intended.
+The filter adds display none to the products not included in it and only shows the products with the combined filter if both selected. Clearing the filter removes all filters as intended.
 
 > Possible improvements: the filter should include more filtering options such as categories, price range and more. Under the filter headline, there should be all the selected filters as it was imagined in the wireframes. 
 
 - Sorting
-Sorting should take all the products, rearange them according to the filter and show the new order. There is a bug for sorting while logged in as admin because I did not take the admin controls into consideration when making it. It has therefore been removed for admins which should not be too big of an issue.
+Sorting should take all the products, rearrange them according to the filter and show the new order. There is a bug for sorting while logged in as admin because I did not take the admin controls into consideration when making it. It has therefore been removed for admins which should not be too big of an issue.
 
 >  Possible improvements include more sorting options and making it screen reader accessible.
 
@@ -159,7 +159,7 @@ Product list shows the correct procucts in regard to the category/filters select
 #### Checkout
 
 - Payment  
-Payment is implemented trough Stripe. If the user closes the window before it is complete, the webhook finishes the payment and creates the order in the system. Since it is a Stripe functionality, all addidtional security features are included and errors are shown. Saving the info to profile is only shown to logged in users and works as intended.
+Payment is implemented through Stripe. If the user closes the window before it is complete, the webhook finishes the payment and creates the order in the system. Since it is a Stripe functionality, all additional security features are included and errors are shown. Saving the info to profile is only shown to logged in users and works as intended.
 
 - Cart preview  
 The preview basically just shows the cart in a bigger screen before a purchase. There is an edit cart button that shows the 
@@ -189,10 +189,10 @@ Main messages work as intended but the logic could use some improvement as they 
 > The removed from db product message should be shown on each page and possibly include the product name.
 
 - Class template filter  
-I wanted to add the forms as you normally would and have created a filter to add class to template elements. In some forms I went the long way of adding it to each field before I realized I could just loop trough the inputs and labels and easily add the appropriate classes.
+I wanted to add the forms as you normally would and have created a filter to add class to template elements. In some forms I went the long way of adding it to each field before I realized I could just loop through the inputs and labels and easily add the appropriate classes.
 
 - Loop template filter  
-I had issues getting the total count when looping trough the product prices in a nested loop on the cart page. The filter keeps track of it in order to get the correct price of each product in a list. 
+I had issues getting the total count when looping through the product prices in a nested loop on the cart page. The filter keeps track of it in order to get the correct price of each product in a list. 
 
 #### Possible future features
 
@@ -203,19 +203,19 @@ There are so many potential features that I could probably work on the project f
 I will just add the bugs which were difficult to fix. For all other bug fixes, check out the commits of type fix.
 
 - Stripe   
-I had the most problems with Stripe some were easy to fix but took a while like forgetting the forward slash in the webhook destination. Thankfully someone in the Slack community had the same issue which helped me find the problem. The biggest issues were webhooks. The first one was the test intents not working due to my gitpod server not being public. The other one was closing the payment window created the payment but did not create the order in the database. This took me hours to fix as I did not really understand how the webhooks worked. After using print statements in every related file and going trough the documentation, I managed to find the problem and fix it. While stressful due to the deadline, It was also fun as it taught me a way of debugging which I did not previously understand.
+I had the most problems with Stripe some were easy to fix but took a while like forgetting the forward slash in the webhook destination. Thankfully someone in the Slack community had the same issue which helped me find the problem. The biggest issues were webhooks. The first one was the test intents not working due to my gitpod server not being public. The other one was closing the payment window created the payment but did not create the order in the database. This took me hours to fix as I did not really understand how the webhooks worked. After using print statements in every related file and going through the documentation, I managed to find the problem and fix it. While stressful due to the deadline, it was also fun as it taught me a way of debugging which I did not previously understand.
 
 - Product price loop in cart  
-All product prices are contained in a list which I tought it would be easy to loop trough using the forloop counter. Since it was a nested loop, that was not possible and so I have made list_index filter which loops trough the prices correctly.
+All product prices are contained in a list which I thought it would be easy to loop through using the forloop counter. Since it was a nested loop, that was not possible and so I have made list_index filter which loops through the prices correctly.
 
 - Cart context  
-As I have made the cart context before starting the videos, my logic was different which caused me to have problems with Stripe. Stripe needed the total cost of the purchase in the view, before the context was rendered. I had to change the the logic so the checkout page has access to context functions, enabling it to get the product details and update products. The variables were then set inside the function and called from the view. The updated status which opens the cart had to be changed as well since calling the function twice when the product is deleted was throwing an error. It was changed to a global variable and updated accordingly.
+As I have made the cart context before starting the videos, my logic was different which caused me to have problems with Stripe. Stripe needed the total cost of the purchase in the view, before the context was rendered. I had to change the logic so the checkout page has access to context functions, enabling it to get the product details and update products. The variables were then set inside the function and called from the view. The updated status which opens the cart had to be changed as well since calling the function twice when the product is deleted was throwing an error. It was changed to a global variable and updated accordingly.
 
 ### Code validation
 
 ##### HTML & CSS
 
-- The W3C validation website is down and in colsulting with student support, I used [HTML validation](https://validator.kldp.org/#validate_by_uri) and [CSS validation](https://css-validator.kldp.org/#validate_by_input) alternatives. They are marked as W3C validation but it seems outdated as it is picking up on some errors that should not be errors like CSS having a background color with opacity set. Apart from misidentified errors, the CSS is valid.
+- The W3C validation website is down and in consulting with student support, I used [HTML validation](https://validator.kldp.org/#validate_by_uri) and [CSS validation](https://css-validator.kldp.org/#validate_by_input) alternatives. They are marked as W3C validation but it seems outdated as it is picking up on some errors that should not be errors like CSS having a background color with opacity set. Apart from misidentified errors, the CSS is valid.
 
 The HTML is also valid with some errors that do not seem to be a problem.
 
@@ -245,10 +245,10 @@ As for the Lighthouse score, it is pretty good apart form the performance sectio
 ### Accessibility
 
 #### Testing
-General accessibility was tested using the [WAVE](https://wave.webaim.org/) evaluation tool. The main page shows the headlines as having a low contrast. When inspecting the contrast in DevTools, it says no contrast information available. I assume since an image is a background, it does not recognise it. Otherwise, the headlines have a large font and should be visible. Other elements mostly satisfy the AAA contrast ratio with some satisfiying the AA ratio. All images have an alt tag apart from some which do not need it. For example rating stars do not as the rating is shown in text form.
+General accessibility was tested using the [WAVE](https://wave.webaim.org/) evaluation tool. The main page shows the headlines as having a low contrast. When inspecting the contrast in DevTools, it says no contrast information available. I assume since an image is a background, it does not recognise it. Otherwise, the headlines have a large font and should be visible. Other elements mostly satisfy the AAA contrast ratio with some satisfying  the AA ratio. All images have an alt tag apart from some which do not need it. For example rating stars do not as the rating is shown in text form.
 
 #### Screen readers
-The goal was to make the website easily navigatable by a screen reader. I have used the [Screen Reader](https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn) extension from Chrome to test the navigation. Idealy, JAWS would be used, but it is not free. The homepage can be navigated using tab completely. The nav has a skip to main content link at the beginning. It does not work perfectly becuse the reader reads skipped instead of the section name, but it was the only way I could get it to focus the right section of each page with some javascript. The filter on the category page also has a skip filter link which skips to the product list. I have ignored the sorting for now as the menu does not open using enter. The product list section has the products information as an aria label. I have not managed to add the neccessary labels and tabidexes to other pages.
+The goal was to make the website easily navigable by a screen reader. I have used the [Screen Reader](https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn) extension from Chrome to test the navigation. Ideally, JAWS would be used, but it is not free. The homepage can be navigated using tab completely. The nav has a skip to main content link at the beginning. It does not work perfectly because the reader reads skipped instead of the section name, but it was the only way I could get it to focus the right section of each page with some javascript. The filter on the category page also has a skip filter link which skips to the product list. I have ignored the sorting for now as the menu does not open using enter. The product list section has the products information as an aria label. I have not managed to add the necessary labels and tabidexes to other pages.
 
 
 ## Database schema
@@ -257,7 +257,7 @@ The goal was to make the website easily navigatable by a screen reader. I have u
 The UserProfile model is a subclass of the Django [User model](https://docs.djangoproject.com/en/3.2/ref/contrib/auth/#fields) that sets default user information. As the information needs to be associated with a User, in case of deletion, the corresponding UserProfile instance is deleted as well.  
 ***
 ![Order model](static/images/readme_images/order-db.png)
-The Order model has a ForeignKey of UserProfile. If a profile is deleted, the field will be set to null as we still need to keep the order in the system. The products in the order are set as a JSONField which shows quantities and sizes for each product. The field is formated in the admin by [django-json-widget](https://github.com/jmrivas86/django-json-widget) for better readability.  
+The Order model has a ForeignKey of UserProfile. If a profile is deleted, the field will be set to null as we still need to keep the order in the system. The products in the order are set as a JSONField which shows quantities and sizes for each product. The field is formatted in the admin by [django-json-widget](https://github.com/jmrivas86/django-json-widget) for better readability.  
 ***
 ![Product model](static/images/readme_images/product-db.png)
 The Product model has no relational keys as its needed values are transformed into a dictionary and saved. If a product gets deleted, it is automatically removed from all the carts that it was in via the context. The intention behind the rating fields is to enable users to rate the product, but I am unsure if I will have the time to add that functionality.  
@@ -269,9 +269,9 @@ The Product model has no relational keys as its needed values are transformed in
 
 ### Local deployment
 
-1. On the top of my repository page, press the code button and copy the url or skip to step 2.
+1. On the top of my repository page, press the code button and copy the URL or skip to step 2.
 
-2. In your IDE terminal, while in the folder in which you whish to clone the project type `git clone https://github.com/ihitrec/Owl_and_Hoot.git`
+2. In your IDE terminal, while in the folder in which you wish to clone the project type `git clone https://github.com/ihitrec/Owl_and_Hoot.git`
 
 3. After cloning the project, you need to set it up. Firstly, install the required packages with `pip3 install -r requirements.txt`
 
@@ -309,12 +309,12 @@ Create Procfile and add `web: gunicorn your_project.wsgi:application`
 Temporarily disable Heroku's static file collection with `heroku config:set DISABLE_COLLECTSTATIC=1 --app your_heroku_app_name`
 Add hostname of your Heroku app in settings: `ALLOWED_HOSTS = ['your_app_name.herokuapp.com', 'localhost']`
 
-6. If app created trough the website initialise git remote: `heroku git:remote -a owl-and-hoot`  
+6. If app created through the website initialise git remote: `heroku git:remote -a owl-and-hoot`  
 Push your changes to Github and then to Heroku: `git push heroku master` (could be main instead of master depending on your branch). 
 
 ### AWS
 
-1. Create and verify an AWS account. After logging in search for S3 scalable storage and create a bucket selecting the apropriate region again. Make sure to unblock all public access and tick the confirmation box at the bottom.
+1. Create and verify an AWS account. After logging in search for S3 scalable storage and create a bucket selecting the appropriate region again. Make sure to unblock all public access and tick the confirmation box at the bottom.
 
 2. After creation is confirmed select the created bucket to customize settings. Go to the bottom of the properties to Static website hosting. Enable it and under Hosting type select host a static website. Fill the index and error document sections with placeholders as it will not be needed.
 
@@ -354,4 +354,4 @@ The commit messages follow conventional commit format: **type(optional scope): d
 
 ## Final notes
 
-There are a lot of improvements that can be made and potential features that can be added. Starting the project I have underestimated the complexity of it which made me aim for some unrealistic goals at the beginning. That is why I have updated the user story section at the end. The final version did not really cover the stories set at the beginning, but it did cover some which I could not percieve when starting. My goal was to do the project completely on my own without relying on the Butique Ado project. It was working well up to about the Stripe section at which point the deadline was nearing and I had to start watching the videos and getting the code from there. Some parts were copied, while some had to be modified to fit the code written up to that point. Overall, I have really enjoyed the coding process and have learned a lot about Django.
+There are a lot of improvements that can be made and potential features that can be added. Starting the project I have underestimated the complexity of it which made me aim for some unrealistic goals at the beginning. That is why I have updated the user story section at the end. The final version did not really cover the stories set at the beginning, but it did cover some which I could not perceive when starting. My goal was to do the project completely on my own without relying on the Boutique Ado project. It was working well up to about the Stripe section at which point the deadline was nearing and I had to start watching the videos and getting the code from there. Some parts were copied, while some had to be modified to fit the code written up to that point. Overall, I have really enjoyed the coding process and have learned a lot about Django.
