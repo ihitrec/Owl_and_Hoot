@@ -7,7 +7,7 @@ The fourth and final project in Code Institute Full Stack Developer program feat
 > Admin login credentials:  
 Username: user  
 Password: Superuser2021  
-Website link: https://owl-and-hoot.herokuapp.com/
+Website link: https://owl-and-hoot.herokuapp.com/ (Hosting is not supported anymore)
 
 ## UX
 
